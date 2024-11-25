@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useRef } from "react";
 import user from "./Profile.js";
+import { PDFExport } from "@progress/kendo-react-pdf";
 import "./CV.scss";
+
 
 const CV = () => {
     // Sort software alphabetically by name
@@ -9,8 +11,13 @@ const CV = () => {
     // Sort languages by level (descending)
     const sortedLanguages = [...user.languages].sort((a, b) => a.name.localeCompare(b.name));
 
+    const pdfRef = useRef();
+
     return (
-        <div className="cv-container">
+        <div>
+          {/* <button onClick={() => pdfRef.current.save()}>Download as PDF</button> */}
+          <PDFExport ref={pdfRef} fileName="CV.pdf">
+            <div className="cv-container">
             {/* Two-column layout */}
             <div className="cv-layout">
                 {/* Left Column */}
@@ -136,7 +143,9 @@ const CV = () => {
                 </div>
             </div>
         </div>
-    );
+          </PDFExport>
+        </div>
+      );
 };
 
 export default CV;
