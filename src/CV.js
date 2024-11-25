@@ -56,7 +56,7 @@ const CV = () => {
                             ))}
                         </ul>
                     </section>
-
+                    <br/>
                     {/* Languages */}
                     <section className="languages">
                         <h2>Stack</h2>
@@ -68,7 +68,7 @@ const CV = () => {
                             ))}
                         </ul>
                     </section>
-
+                    <br/>
                     {/* Soft Skills */}
                     <section className="soft-skills">
                         <h2>Soft Skills</h2>
