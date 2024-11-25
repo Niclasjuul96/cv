@@ -1,20 +1,15 @@
-import image from "./Profile.jpg"
+import profileImage from "./Profile.jpg";
 
 const user = {
     id: 0,
     name: "Niclas",
     lastName: "Juul Schæffer",
-    mail: "ns@stablestack.dk",
+    image: profileImage,
+    title: { en: "IT Support Specialist" },
+    title2: { en: "Problem-Solver" },
+    phone: "+45 22 20 78 12",
+    mail: "Niclasschaeffer96@gmail.com",
     license: "AM, B",
-    image: {image},
-    title: {
-        en: "Partner",
-        da: "Partner"
-    },
-    title2: {
-        en: "IT Support Specialist",
-        da: "IT Support Specialist"
-    },
     qoute: {
         en: "IT support is about empowering users and ensuring technology works seamlessly in their favor.",
         da: "IT-support handler om at give brugerne muligheder og sikre, at teknologien fungerer gnidningsfrit for dem."
@@ -42,87 +37,123 @@ const user = {
     },
     languages: [
         {
-            name: "csharp",
+            name: "Csharp",
             level: 3
         },
         {
-            name: "python",
+            name: "Python",
             level: 3
         },
         {
-            name: "typescript",
+            name: "Typescript",
             level: 2
         },
         {
-            name: "css",
+            name: "Css",
             level: 3
         },
         {
-            name: "git",
+            name: "Git",
             level: 4
         },
         {
-            name: "java",
+            name: "Java",
             level: 3
         },
         {
-            name: "js",
+            name: "Js",
             level: 4
         },
         {
-            name: "php",
+            name: "Php",
             level: 1
         },
         {
-            name: "powershell",
+            name: "Powershell",
             level: 2
         },
         {
-            name: "mysql",
+            name: "Mysql",
             level: 3
         },
         {
-            name: "react",
+            name: "React",
             level: 3
         },
         {
-            name: "springboot",
+            name: "Springboot",
             level: 2
         },
         {
-            name: "electron",
+            name: "Electron",
             level: 2
         }
     ],
     software: [
         {
-            name: "android",
-            level: 3
+            name: "Windows Server"
         },
         {
-            name: "azure",
-            level: 2
+            name: "Active Directory"
         },
         {
-            name: "github",
-            level: 4
+            name: "Microsoft 365"
         },
         {
-            name: "intellij",
-            level: 2
+            name: "PowerShell"
         },
         {
-            name: "vs code",
-            level: 4
+            name: "Remote Desktop"
         },
         {
-            name: "vs community",
-            level: 4
+            name: "Slack"
         },
         {
-            name: "wordpress",
-            level: 2
+            name: "Zoom"
+        },
+        {
+            name: "TeamViewer"
+        },
+        {
+            name: "ServiceNow"
+        },
+        {
+            name: "Jira"
+        },
+        {
+            name: "Windows"
+        },
+        {
+            name: "Linux"
+        },
+        {
+            name: "MacOS"
+        },
+        {
+            name: "VMware"
+        },
+        {
+            name: "Android"
+        },
+        {
+            name: "Azure"
+        },
+        {
+            name: "Github"
+        },
+        {
+            name: "Intellij"
+        },
+        {
+            name: "Vs code"
+        },
+        {
+            name: "Vs community"
+        },
+        {
+            name: "Wordpress"
         }
+        
     ],
     softSkills: [
         {
@@ -196,10 +227,24 @@ const user = {
                 da: "EUX TEC Ballerup - Datatekniker med speciale i programmering"
             },
             subjects: [
-                "Basic Networking (Cisco)",
-                "OS (Linux, Windows)",
-                "Development (C#, JavaScript)",
-                "Computing and Infrastructure"
+                "Information Technology.",
+                "Technical Subjects - Design and Production",
+                "Advanced Operating Systems",
+                "Backup Technology",
+                "Computer Technology",
+                "Server Technology - Linux",
+                "Server Technology - Database Server",
+                "Programming (Java)",
+                "Programming (C#)",
+                "Database Systems",
+                "IT Requirement Specification",
+                "System Development and Project Management",
+                "Virtualization",
+                "Embedded Controller",
+                "Programming of Mobile Applications",
+                "IT Service Management",
+                "Network Technology",
+                "Web Server Technology"
             ]
         }
     ],

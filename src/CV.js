@@ -1,86 +1,140 @@
 import React from "react";
 import user from "./Profile.js";
+import "./CV.scss";
 
 const CV = () => {
+    // Sort software alphabetically by name
+    const sortedSoftware = [...user.software].sort((a, b) => a.name.localeCompare(b.name));
+
+    // Sort languages by level (descending)
+    const sortedLanguages = [...user.languages].sort((a, b) => a.name.localeCompare(b.name));
+
     return (
-        <div style={{ fontFamily: "Arial, sans-serif", margin: "20px" }}>
-            {/* Header Section */}
-            <div style={{ display: "flex", alignItems: "center" }}>
-                <img 
-                    src={user.image.profile} 
-                    alt={`${user.name} ${user.lastName}`} 
-                    style={{ borderRadius: "50%", width: "150px", height: "150px", marginRight: "20px" }} 
-                />
-                <div>
-                    <h1>{user.name} {user.lastName}</h1>
-                    <h2>{user.title.en} - {user.title2.en}</h2>
+        <div className="cv-container">
+            {/* Two-column layout */}
+            <div className="cv-layout">
+                {/* Left Column */}
+                <div className="left-column">
+                    {/* Profile Picture */}
+                    <img
+                        src={user.image}
+                        alt={`${user.name} ${user.lastName}`}
+                        className="profile-image"
+                    />
+
+                    {/* Contact Info */}
+                    <section className="contact">
+                        <h2>Contact</h2>
+                        <ul>
+                            <li>
+                                <strong>Phone:</strong> <br /> <span>{user.phone}</span>
+                            </li>
+                            <li>
+                                <strong>Email:</strong> <br /> <span>{user.mail}</span>
+                            </li>
+                            <li>
+                                <strong>License:</strong> <br /> <span>{user.license}</span>
+                            </li>
+                        </ul>
+                    </section>
+
+                    {/* Software */}
+                    <section className="software">
+                        <h2>Software / OS</h2>
+                        <ul>
+                            {sortedSoftware.map((soft, index) => (
+                                <li key={index}>
+                                    - <strong>{soft.name}</strong>
+                                </li>
+                            ))}
+                        </ul>
+                    </section>
+
+                    {/* Languages */}
+                    <section className="languages">
+                        <h2>Stack</h2>
+                        <ul>
+                            {sortedLanguages.map((lang, index) => (
+                                <li key={index}>
+                                    - <strong>{lang.name}</strong> (Level {lang.level})
+                                </li>
+                            ))}
+                        </ul>
+                    </section>
+
+                    {/* Soft Skills */}
+                    <section className="soft-skills">
+                        <h2>Soft Skills</h2>
+                        {user.softSkills.map((skill, index) => (
+                            <div key={index} className="soft-skill">
+                                -{" "}
+                                <strong>
+                                    {typeof skill.name === "string"
+                                        ? skill.name
+                                        : skill.name.en}
+                                </strong>
+                                <p>{skill.text.en}</p>
+                            </div>
+                        ))}
+                    </section>
+                </div>
+
+                {/* Right Column */}
+                <div className="right-column">
+                    {/* Header Section */}
+                    <div className="cv-header">
+                        <h1>
+                            {user.name} {user.lastName}
+                        </h1>
+                        <h2>
+                            {user.title.en} - {user.title2.en}
+                        </h2>
+                    </div>
+
+                    {/* About Me */}
+                    <section className="about-me">
+                        <p>{user.info.en}</p>
+                    </section>
+
+                    {/* Work Experience */}
+                    <section className="work-experience">
+                        <h2>Work Experience</h2>
+                        {user.workExp.map((exp, index) => (
+                            <div key={index} className="experience-item">
+                                <h3>{exp.company}</h3>
+                                <h4>{exp.date}</h4>
+                                <ul>
+                                    {exp.assignments.map((assignment, idx) => (
+                                        <li key={idx}>{assignment.en}</li>
+                                    ))}
+                                </ul>
+                            </div>
+                        ))}
+                    </section>
+
+                    {/* Education */}
+                    <section className="education">
+                        <h2>Education</h2>
+                        {user.education.map((edu, index) => (
+                            <div key={index} className="education-item">
+                                <h3>{edu.name.en}</h3>
+                                <h4>{edu.date}</h4>
+                                <ul>
+                                    {edu.subjects.map((subject, idx) => (
+                                        <li key={idx}>{subject}</li>
+                                    ))}
+                                </ul>
+                            </div>
+                        ))}
+                    </section>
+
+                    {/* Spare Time */}
+                    <section className="spare-time">
+                        <h2>Spare Time</h2>
+                        <p>{user.spareTime.en}</p>
+                    </section>
                 </div>
             </div>
-
-            {/* About Me */}
-            <section style={{ marginTop: "20px" }}>
-                <h2>About Me</h2>
-                <p>{user.info.en}</p>
-            </section>
-
-            {/* Skills */}
-            <section style={{ marginTop: "20px" }}>
-                <h2>Skills</h2>
-                <h3>Programming Languages</h3>
-                <ul>
-                    {user.languages.map((lang, index) => (
-                        <li key={index}>{lang.name} - Level {lang.level}</li>
-                    ))}
-                </ul>
-                <h3>Software</h3>
-                <ul>
-                    {user.software.map((soft, index) => (
-                        <li key={index}>{soft.name} - Level {soft.level}</li>
-                    ))}
-                </ul>
-            </section>
-
-            {/* Work Experience */}
-            <section style={{ marginTop: "20px" }}>
-                <h2>Work Experience</h2>
-                {user.workExp.map((exp, index) => (
-                    <div key={index} style={{ marginBottom: "20px" }}>
-                        <h3>{exp.date}</h3>
-                        <h4>{exp.company}</h4>
-                        <ul>
-                            {exp.assignments.map((assignment, idx) => (
-                                <li key={idx}>{assignment.en}</li>
-                            ))}
-                        </ul>
-                    </div>
-                ))}
-            </section>
-
-            {/* Education */}
-            <section style={{ marginTop: "20px" }}>
-                <h2>Education</h2>
-                {user.education.map((edu, index) => (
-                    <div key={index} style={{ marginBottom: "20px" }}>
-                        <h3>{edu.date}</h3>
-                        <h4>{edu.name.en}</h4>
-                        <ul>
-                            {edu.subjects.map((subject, idx) => (
-                                <li key={idx}>{subject}</li>
-                            ))}
-                        </ul>
-                    </div>
-                ))}
-            </section>
-
-            {/* Languages */}
-            <section style={{ marginTop: "20px" }}>
-                <h2>Languages</h2>
-                <ul>
-                    {user.spokenLangs.map((lang, index) => (
-                        <li key={index}>{lang.en}</li>
-                    ))}
-                </ul>
-            </section>
         </div>
     );
 };

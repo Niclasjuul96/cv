@@ -1,5 +1,5 @@
 import React from "react"
-import CV from ".CV.js"
+import CV from "./CV";
 
 function App() {
   return (
