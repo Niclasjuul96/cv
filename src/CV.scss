@@ -4,7 +4,7 @@ $header-color: #444;
 $highlight-color: #007bff;
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Roboto', sans-serif;
     line-height: 1.5; // Increased line spacing for even better readability
     color: $font-color;
     width: 21cm;
@@ -20,7 +20,9 @@ body {
     background: #f9f9f9;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    font-family: 'Arial', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-variant-ligatures: none;
+    font-feature-settings: "liga" 0;
     
 }
 
@@ -69,7 +71,8 @@ body {
         &.languages,
         &.contact,
         &.software,
-        &.soft-skills {
+        &.soft-skills,
+        &.spoken-langs {
             ul {
                 padding-left: 0px; // Slightly more indentation
                 margin: 20px; // Consistent margin for all sections
@@ -86,6 +89,11 @@ body {
                     margin-left: 15px;
                     font-size: 1rem; // Larger description text
                 }
+            }
+            .spoken-lang {
+                margin-bottom: 20px; // More space between each soft skill
+                margin-left: 20px;
+                font-size: 1.2rem;
             }
         }
 

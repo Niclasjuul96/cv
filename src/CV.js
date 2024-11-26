@@ -11,12 +11,13 @@ const CV = () => {
     // Sort languages by level (descending)
     const sortedLanguages = [...user.languages].sort((a, b) => a.name.localeCompare(b.name));
 
-    const pdfRef = useRef();
+    const pdfExportComponent = useRef(null);
 
+    document.title = "Niclas CV"
     return (
         <div>
-          {/* <button onClick={() => pdfRef.current.save()}>Download as PDF</button> */}
-          <PDFExport ref={pdfRef} fileName="CV.pdf">
+          {/* <button onClick={() => pdfExportComponent.current.save()}>Download as PDF</button> */}
+          <PDFExport ref={pdfExportComponent} fileName="Niclas_CV.pdf" paperSize="A4" scale={0.8} settings={{ content: { type: "svg" } }}>
             <div className="cv-container">
             {/* Two-column layout */}
             <div className="cv-layout">
@@ -84,6 +85,19 @@ const CV = () => {
                             </div>
                         ))}
                     </section>
+
+                    {/*Spoken Langauges*/}
+                    <section classname="spoken-langs">
+                        <h2>Langauges</h2>
+                        {user.spokenLangs.map((lang, index) => (
+                            <div key={index} className="spoken-lang">
+                                -{" "}
+                                <strong>
+                                    {lang.en}
+                                </strong>
+                            </div>
+                        ))}
+                    </section>
                 </div>
 
                 {/* Right Column */}
@@ -129,6 +143,24 @@ const CV = () => {
                                 <ul>
                                     {edu.subjects.map((subject, idx) => (
                                         <li key={idx}>{subject}</li>
+                                    ))}
+                                </ul>
+                            </div>
+                        ))}
+                    </section>
+
+                    {/* Other Experience */}
+                    <section className="other-experience">
+                        <h2>Other Experience</h2>
+                        {user.otherExp.map((exp, index) => (
+                            <div key={index} className="experience-item">
+                                <h3>{exp.name}</h3>
+                                <h4>{exp.date}</h4>
+                                <ul>
+                                    {exp.assignments.map((assignment, idx) => (
+                                        <li key={idx}>
+                                            {assignment.en}
+                                        </li>
                                     ))}
                                 </ul>
                             </div>
