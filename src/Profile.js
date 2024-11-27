@@ -192,13 +192,24 @@ const user = {
             date: "Aug. 2016 - May. 2022",
             company: "Technical Education Copenhagen",
             assignments: [
-                { en: "IT-Support internship", da: "IT-Support Elev" },
+                { en: "IT-Support Internship", da: "IT-Support Elev" },
                 { en: "Web Developer", da: "Web udvikler" },
-                { en: "As an IT intern with 6 years on and off experience, while I was completing my Data technician education, I provided comprehensive 1st and 2nd level support, "+ 
-                    "addressing a wide range of technical issues and ensuring smooth IT operations. I excelled in troubleshooting hardware and software problems, assisting users with technical challenges, "+
-                    "and maintaining system functionality.", 
-                da: "Som IT-praktikant med 6 års on and off-erfaring, mens jeg gennemførte min datateknikeruddannelse, leverede jeg omfattende support på 1. og 2. niveau, løste en bred vifte af tekniske problemer "+
-                "og sikrede en problemfri IT-drift. Jeg udmærkede mig ved at fejlfinde hardware- og softwareproblemer, hjælpe brugere med tekniske udfordringer og vedligeholde systemets funktionalitet. "}
+                { en: "1st and 2nd Level IT Support", da: "1. og 2. niveau IT-support" },
+                { en: "Troubleshooting hardware and software issues", da: "Fejlfinding af hardware- og softwareproblemer" },
+                { en: "Technical assistance for users", da: "Teknisk support til brugere" },
+                { en: "System maintenance and optimization", da: "Vedligeholdelse og optimering af systemer" }
+            ]
+            
+        },
+        {
+            date: "Jun 2022 - Aug 2023",
+            company: "Alex Cykler (Part time)",
+            assignments: [
+                { en: "Assisting to create a webshop (e-commence)", da: "Hjælpe med at lave en webshop (e-commence)"},
+                { en: "Creating Items in the webshop (e-commence)", da: "Oprette vare på webshoppen (e-commence)"},
+                { en: "Update item informations. (e-commence)", da: "Opdatere genstandes informationer (e-commence)"},
+                { en: "Helping on the warehouse", da: "Hjælpe på lageret"},
+                { en: "Pack and send packages", da: "Pakke og sende pakker"}
             ]
         }
     ],
@@ -223,7 +234,7 @@ const user = {
         {
             date: "Jan. 2016 - Jun. 2021",
             name: {
-                en: "EUX TEC Ballerup - Datatechnitian specialized in development",
+                en: "EUX TEC Ballerup - Datatechnitian specialized in Programming",
                 da: "EUX TEC Ballerup - Datatekniker med speciale i programmering"
             },
             subjects: [
@@ -246,6 +257,42 @@ const user = {
                 "Network Technology",
                 "Web Server Technology"
             ]
+        },
+        {
+            date: "jun 2014 - dec 2015",
+            name: {
+                en: "STX Ørestad Gymnasium",
+                da: "STX Ørestad Gymnasium",
+            },
+            subjects: [
+                "Danish",
+                "Mathematics",
+                "Physics",
+                "BioTechnology"
+            ]
+        },
+        {
+            date: "jun 2013 - jun 2014",
+            name: {
+                en: "Odsherred Efterskole 10th grade",
+                da: "Odsherred Efterskole 10. klasse",
+            },
+            subjects: [
+                "Danish",
+                "Mathematics",
+                "Photography / Editing",
+                "cadet line subject"
+            ]
+        },
+        {
+            date: "jun 2003 - jun 2013",
+            name: {
+                en: "Public school Løjtegårdsskolen",
+                da: "Folkeskole Løjtegårdsskolen",
+            },
+            subjects: [
+                "Many subjects"
+            ]
         }
     ],
     otherExp: [
@@ -253,20 +300,20 @@ const user = {
             date: "Dec. 2019 - currently",
             name: "Bog og Ide", 
             assignments: [
-                {
-                    en: "Sales of books, board games, toys etc. and Assisting Customers requests.",
-                    da: "Salg af bøger og brætspil, samt legetøj."
-                }
+                { en: "Sales of books", da: "Salg af bøger"}, 
+                { en: "Sales of board games", da: "salg af brætspil"},
+                { en: "Sales of toys", da: "Salg af legetøj"},
+                { en: "Assisting Customers requests.", da: "giver god kundeservice" }
+
             ]
         },
         {
             date: "Apr. 2017 - Jun. 2021",
             name: "Beredskabets venner",
             assignments: [
-                {
-                    en: "Customer service, Communications, overview of a situation",
-                    da: "Kundeservice, kommunikation, overblik over en situation."
-                }
+                { en: "Customer service", da: "Kundeservice"}, 
+                { en: "Communications", da: "kommunikation"},
+                { en: "Situation handling", da: "Situations håndtering"},  
             ]
         }
     ],
