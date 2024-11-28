@@ -87,7 +87,7 @@ const CV = () => {
                     </section>
 
                     {/*Spoken Langauges*/}
-                    <section classname="spoken-langs">
+                    <section className="spoken-langs">
                         <h2>Langauges</h2>
                         {user.spokenLangs.map((lang, index) => (
                             <div key={index} className="spoken-lang">
