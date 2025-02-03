@@ -43,6 +43,15 @@ const CV = () => {
                             <li>
                                 <strong>License:</strong> <br /> <span>{user.license}</span>
                             </li>
+                            <li>
+                                <strong>Website:</strong> <br /> <span>{user.webpage}</span>
+                            </li>
+                            <li>
+                                <strong>Linkedin:</strong> <br /> <span>{user.linkedin}</span>
+                            </li>
+                            <li>
+                                <strong>Github:</strong> <br /> <span>{user.github}</span>
+                            </li>
                         </ul>
                     </section>
 

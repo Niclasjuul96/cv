@@ -10,6 +10,9 @@ const user = {
     phone: "+45 22 20 78 12",
     mail: "Niclasschaeffer96@gmail.com",
     license: "AM, B",
+    webpage: "https://niclasjuul.com",
+    linkedin: "https://www.linkedin.com/in/niclas-juul-schaeffer/",
+    github: "https://github.com/Niclasjuul96",
     qoute: {
         en: "IT support is about empowering users and ensuring technology works seamlessly in their favor.",
         da: "IT-support handler om at give brugerne muligheder og sikre, at teknologien fungerer gnidningsfrit for dem."
