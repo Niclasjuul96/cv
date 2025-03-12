@@ -10,7 +10,7 @@ const user = {
     phone: "+45 22 20 78 12",
     mail: "Niclasschaeffer96@gmail.com",
     license: "AM, B",
-    webpage: "https://niclasjuul.com",
+    webpage: "https://niclasjuul.dk",
     linkedin: "https://www.linkedin.com/in/niclas-juul-schaeffer/",
     github: "https://github.com/Niclasjuul96",
     qoute: {
@@ -192,8 +192,31 @@ const user = {
     ],
     workExp: [
         {
+            date: "Mar. 2025 - now",
+            company: "ITAGIL - Developer",
+            assignments: [
+                { en: "Software Developer", da: "Softwareudvikler" },
+                { en: "Developing software for clients", da: "Udvikle software til kunder" },
+                { en: "Maintaining and optimizing software", da: "Vedligeholde og optimere software" },
+                { en: "Troubleshooting software issues", da: "Fejlfinding af softwareproblemer" },
+                { en: "Collaborating with team members", da: "Samarbejde med teammedlemmer" }
+
+            ]
+        },
+        {
+            date: "Jun. 2022 - Aug. 2023",
+            company: "Alex Cykler (Part time) - Webshop Assistant",
+            assignments: [
+                { en: "Assisting to create a webshop (e-commence)", da: "Hjælpe med at lave en webshop (e-commence)"},
+                { en: "Creating Items in the webshop (e-commence)", da: "Oprette vare på webshoppen (e-commence)"},
+                { en: "Update item informations. (e-commence)", da: "Opdatere genstandes informationer (e-commence)"},
+                { en: "Helping on the warehouse", da: "Hjælpe på lageret"},
+                { en: "Pack and send packages", da: "Pakke og sende pakker"}
+            ]
+        },
+        {
             date: "Aug. 2016 - May. 2022",
-            company: "Technical Education Copenhagen",
+            company: "Technical Education Copenhagen - IT Support Specialist",
             assignments: [
                 { en: "IT-Support Internship", da: "IT-Support Elev" },
                 { en: "Web Developer", da: "Web udvikler" },
@@ -203,22 +226,11 @@ const user = {
                 { en: "System maintenance and optimization", da: "Vedligeholdelse og optimering af systemer" }
             ]
             
-        },
-        {
-            date: "Jun 2022 - Aug 2023",
-            company: "Alex Cykler (Part time)",
-            assignments: [
-                { en: "Assisting to create a webshop (e-commence)", da: "Hjælpe med at lave en webshop (e-commence)"},
-                { en: "Creating Items in the webshop (e-commence)", da: "Oprette vare på webshoppen (e-commence)"},
-                { en: "Update item informations. (e-commence)", da: "Opdatere genstandes informationer (e-commence)"},
-                { en: "Helping on the warehouse", da: "Hjælpe på lageret"},
-                { en: "Pack and send packages", da: "Pakke og sende pakker"}
-            ]
-        }
+        } 
     ],
     education: [
         {
-            date: "Jun. 2022 - Now",
+            date: "Jun. 2022 - Feb. 2025",
             name: {
                 en: "Software engineering at DTU",
                 da: "Software Engineering på DTU"
@@ -262,7 +274,7 @@ const user = {
             ]
         },
         {
-            date: "jun 2014 - dec 2015",
+            date: "Jun. 2014 - Dec. 2015",
             name: {
                 en: "STX Ørestad Gymnasium",
                 da: "STX Ørestad Gymnasium",
@@ -275,7 +287,7 @@ const user = {
             ]
         },
         {
-            date: "jun 2013 - jun 2014",
+            date: "Jun. 2013 - Jun. 2014",
             name: {
                 en: "Odsherred Efterskole 10th grade",
                 da: "Odsherred Efterskole 10. klasse",
@@ -288,7 +300,7 @@ const user = {
             ]
         },
         {
-            date: "jun 2003 - jun 2013",
+            date: "Jun. 2003 - Jun. 2013",
             name: {
                 en: "Public school Løjtegårdsskolen",
                 da: "Folkeskole Løjtegårdsskolen",
@@ -300,7 +312,7 @@ const user = {
     ],
     otherExp: [
         {
-            date: "Dec. 2019 - currently",
+            date: "Dec. 2019 - Mar. 2025",
             name: "Bog og Ide", 
             assignments: [
                 { en: "Sales of books", da: "Salg af bøger"}, 
