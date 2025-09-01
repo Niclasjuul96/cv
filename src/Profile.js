@@ -151,7 +151,8 @@ software: [
                 { en: "Developing software for clients", da: "Udvikle software til kunder" },
                 { en: "Maintaining and optimizing software", da: "Vedligeholde og optimere software" },
                 { en: "Troubleshooting software issues", da: "Fejlfinding af softwareproblemer" },
-                { en: "Collaborating with team members", da: "Samarbejde med teammedlemmer" }
+                { en: "Collaborating with team members", da: "Samarbejde med teammedlemmer" },
+                { en: "Primarily used CI/CD for deployment", da: "Primært brugt CI/CD for udgivelse"}
 
             ]
         },
