@@ -18,97 +18,80 @@ const user = {
         da: "Udvikling handler om at skabe løsninger, der ikke kun er funktionelle, men også skalerbare, brugervenlige og bygget til at holde."
     },
     info: {
-        en: "Full-stack developer specializing in ASP.NET, C#, SQL Server, and Entity Framework. I build scalable "+
-        "backend APIs and intuitive frontend interfaces using React, JavaScript, HTML, and CSS. I also have experience with WordPress, "+
-        "where I develop custom themes and extend functionality beyond standard templates. In projects requiring data integration, "+
-        "I have worked with XML and XSLT to meet business and legacy system needs. I focus on writing clean, maintainable code and "+
-        "enjoy solving complex challenges through thoughtful and practical engineering.",
+        en: "Full-stack developer with broad knowledge across different technologies and frameworks. I have worked most with " +
+        "ASP.NET, C#, SQL Server, and Entity Framework for backend development, and React, JavaScript, HTML, and CSS for building " +
+        "frontend interfaces. I also have experience with WordPress (custom themes/plugins) and data integration using XML/XSLT. " +
+        "I focus on writing clean, maintainable code and enjoy solving complex problems with practical solutions.",
 
-        da: "Full-stack udvikler med speciale i ASP.NET, C#, SQL Server og Entity Framework. Jeg bygger skalerbare backend-API’er og "+
-        "intuitive frontend-grænseflader med React, JavaScript, HTML og CSS. Jeg har også erfaring med WordPress, hvor jeg udvikler "+
-        "skræddersyede temaer og udvider funktionaliteten ud over standardløsninger. I projekter med dataintegration har jeg arbejdet "+
-        "med XML og XSLT for at imødekomme både forretningsmæssige og legacy-krav. Jeg har fokus på at skrive ren, vedligeholdelig kode og "+
-        "nyder at løse komplekse udfordringer gennem gennemtænkt og praktisk ingeniørarbejde."
+        da: "Full-stack udvikler med bred viden indenfor forskellige teknologier og frameworks. Jeg har især arbejdet med " +
+        "ASP.NET, C#, SQL Server og Entity Framework til backend-udvikling samt React, JavaScript, HTML og CSS til at bygge " +
+        "frontend-grænseflader. Jeg har også erfaring med WordPress (custom temaer/plugins) og dataintegration med XML/XSLT. " +
+        "Jeg fokuserer på at skrive ren, vedligeholdelig kode og nyder at løse komplekse problemer med praktiske løsninger."
     },
 
-skillInfo: {
-    en: "As you explore my profile, you'll discover my comprehensive skills as a full-stack developer. " +
-    "From building scalable backend solutions with ASP.NET, C# and SQL Server to creating intuitive " +
-    "frontend interfaces with React, JavaScript, HTML and CSS, I deliver clean and user-focused web applications. " +
-    "I also have experience with WordPress, developing custom themes and extending functionality, as well as " +
-    "working with XML and XSLT for data transformation and system integration. I am committed to continuous learning " +
-    "and take pride in writing maintainable, efficient code that solves real business challenges.",
+    languages: [
+        { name: "Csharp", level: 3 },
+        { name: "ASP.net", level: 3 },
+        { name: "SqlServer", level: 3 },
+        { name: "React", level: 3 },
+        { name: "Js", level: 4 },
+        { name: "Typescript", level: 2 },
+        { name: "Css", level: 3 },
+        { name: "Html", level: 3 },
+        { name: "Git", level: 4 },
+        { name: "WordPress", level: 3 },
+        { name: "Php", level: 3 },
+        { name: "Python", level: 3 },
+        { name: "Java", level: 3 },
+        { name: "Springboot", level: 2 },
+        { name: "Mysql", level: 3 },
+        { name: "Electron", level: 2 },
+        { name: "Powershell", level: 2 },
+        { name: "Xml", level: 3 },
+        { name: "Xslt", level: 3 }
+    ],
+    software: [
+        // Core developer stack
+        { name: "Visual Studio Community" },
+        { name: "VS Code" },
+        { name: "IntelliJ" },
+        { name: "GitHub" },
+        { name: "SQL Server Management Studio" },
+        { name: "Entity Framework" },
+        { name: "ASP.NET" },
+        { name: "Next.js" },
+        { name: "NestJS" },
+        { name: "Node.js" },
+        { name: "npm" },
+        { name: "React" },
+        { name: "WordPress" },
+        { name: "Prism (WPF)" },
 
-    da: "Når du udforsker min profil, vil du opdage mine omfattende færdigheder som full-stack udvikler. " +
-    "Fra at bygge skalerbare backend-løsninger med ASP.NET, C# og SQL Server til at skabe intuitive " +
-    "frontend-grænseflader med React, JavaScript, HTML og CSS leverer jeg rene og brugervenlige webapplikationer. " +
-    "Jeg har også erfaring med WordPress, hvor jeg har udviklet skræddersyede temaer og udvidet funktionalitet, " +
-    "samt arbejdet med XML og XSLT til datatransformation og systemintegration. Jeg er engageret i løbende læring " +
-    "og sætter en ære i at skrive vedligeholdelig og effektiv kode, der løser reelle forretningsbehov."
-},
-languages: [
-    { name: "Csharp", level: 3 },
-    { name: "ASP.net", level: 3 },
-    { name: "SqlServer", level: 3 },
-    { name: "React", level: 3 },
-    { name: "Js", level: 4 },
-    { name: "Typescript", level: 2 },
-    { name: "Css", level: 3 },
-    { name: "Html", level: 3 },
-    { name: "Git", level: 4 },
-    { name: "WordPress", level: 3 },
-    { name: "Php", level: 3 },
-    { name: "Python", level: 3 },
-    { name: "Java", level: 3 },
-    { name: "Springboot", level: 2 },
-    { name: "Mysql", level: 3 },
-    { name: "Electron", level: 2 },
-    { name: "Powershell", level: 2 },
-    { name: "Xml", level: 3 },
-    { name: "Xslt", level: 3 }
-],
-software: [
-    // Core developer stack
-    { name: "Visual Studio Community" },
-    { name: "VS Code" },
-    { name: "IntelliJ" },
-    { name: "GitHub" },
-    { name: "SQL Server Management Studio" },
-    { name: "Entity Framework" },
-    { name: "ASP.NET" },
-    { name: "Next.js" },
-    { name: "NestJS" },
-    { name: "Node.js" },
-    { name: "npm" },
-    { name: "React" },
-    { name: "WordPress" },
-    { name: "Prism (WPF)" },
+        // DevOps & system integration
+        { name: "Docker" },
+        { name: "Azure" },
+        { name: "Postman" },
+        { name: "Figma" },
 
-    // DevOps & system integration
-    { name: "Docker" },
-    { name: "Azure" },
-    { name: "Postman" },
-    { name: "Figma" },
+        // Operating systems & platforms
+        { name: "Windows" },
+        { name: "Linux" },
+        { name: "MacOS" },
+        { name: "VMware" },
+        { name: "Android" },
 
-    // Operating systems & platforms
-    { name: "Windows" },
-    { name: "Linux" },
-    { name: "MacOS" },
-    { name: "VMware" },
-    { name: "Android" },
-
-    // IT-support / infrastructure background
-    { name: "Windows Server" },
-    { name: "Active Directory" },
-    { name: "Microsoft 365" },
-    { name: "PowerShell" },
-    { name: "Remote Desktop" },
-    { name: "TeamViewer" },
-    { name: "ServiceNow" },
-    { name: "Jira" },
-    { name: "Slack" },
-    { name: "Zoom" }
-],
+        // IT-support / infrastructure background
+        { name: "Windows Server" },
+        { name: "Active Directory" },
+        { name: "Microsoft 365" },
+        { name: "PowerShell" },
+        { name: "Remote Desktop" },
+        { name: "TeamViewer" },
+        { name: "ServiceNow" },
+        { name: "Jira" },
+        { name: "Slack" },
+        { name: "Zoom" }
+    ],
 
     softSkills: [
         {
