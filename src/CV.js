@@ -17,7 +17,14 @@ const CV = () => {
     return (
         <div>
           {/* <button onClick={() => pdfExportComponent.current.save()}>Download as PDF</button> */}
-          <PDFExport ref={pdfExportComponent} fileName="Niclas_CV.pdf" paperSize="A4" scale={0.8} settings={{ content: { type: "svg" } }}>
+        <PDFExport
+            ref={pdfExportComponent}
+            fileName="Niclas_CV.pdf"
+            paperSize="A4"
+            margin={{ top: "0mm", right: "0mm", bottom: "0mm", left: "0mm" }} // eller 0 hvis du vil helt ud til kanten
+            scale={1}
+            settings={{ content: { type: "svg" } }}
+        >
             <div className="cv-container">
             {/* Two-column layout */}
             <div className="cv-layout">

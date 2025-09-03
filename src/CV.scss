@@ -3,182 +3,230 @@ $font-color: #333;
 $header-color: #444;
 $highlight-color: #007bff;
 
+* {
+  box-sizing: border-box;
+}
+
 body {
-    font-family: 'Roboto', sans-serif;
-    line-height: 1.5; // Increased line spacing for even better readability
-    color: $font-color;
-    width: 21cm;
-    margin: 0;
-    padding: 0;
-    font-size: 14px; // Increased base font size for larger text
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.5;
+  color: $font-color;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  // IMPORTANT: fjern fast bredde i cm på body!
+  // width: 21cm;  // <-- fjernet
 }
 
 // Container for the CV
 .cv-container {
-    margin: 0 auto;
-    padding: 5px;
-    background: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    font-family: 'Roboto', sans-serif;
-    font-variant-ligatures: none;
-    font-feature-settings: "liga" 0;
-    
+  margin: 0;
+  padding: 0;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: 'Roboto', sans-serif;
+  font-variant-ligatures: none;
+  font-feature-settings: "liga" 0;
+
+  // Hold dig inden for printmargener (Kendo/print)
+  max-width: none;
 }
 
 // Layout with Two Columns
 .cv-layout {
-    display: grid;
-    grid-template-columns: 1fr 2fr; // Left column: 1 unit, Right column: 2 units
-    gap: 10px;
+  display: grid;
+  grid-template-columns: 1fr 2fr; // Left column: 1 unit, Right column: 2 units
+  gap: 10px;
 }
 
 // Left Column
 .left-column {
-    background: #cfe0f2;
-    padding: 10px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background: #cfe0f2;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 
-    .profile-image {
-        width: 100%;
-        border-radius: 5px;
-        margin: 0 auto 30px auto; // Increased margin for spacing below the image
-        display: block;
+  .profile-image {
+    width: 100%;
+    border-radius: 5px;
+    margin: 0 auto 30px auto;
+    display: block;
+  }
+
+  section {
+    margin-bottom: 30px;
+
+    h2 {
+      font-size: 1.8rem;
+      color: $header-color;
+      margin-bottom: 15px;
     }
 
-    section {
-        margin-bottom: 30px; // Increased spacing between sections
+    ul {
+      list-style-type: none;
+      padding-left: 25px;
+      margin: 20px;
 
-        h2 {
-            font-size: 1.8rem; // Larger section headings
-            color: $header-color;
-            margin-bottom: 15px;
-        }
-
-        ul {
-            list-style-type: none;
-            padding-left: 25px; // Slightly more indentation
-            margin: 20px; // Increased spacing around each section
-
-            li {
-                margin-bottom: 10px; // Increased space between list items
-                font-size: 1.2rem; // Larger text for list items
-            }
-        }
-
-        // Shared style for Languages, Software, and Soft Skills
-        &.languages,
-        &.contact,
-        &.software,
-        &.soft-skills,
-        &.spoken-langs {
-            ul {
-                padding-left: 0px; // Slightly more indentation
-                margin: 20px; // Consistent margin for all sections
-
-            }
-
-            .soft-skill {
-                margin-bottom: 20px; // More space between each soft skill
-                margin-left: 20px;
-                font-size: 1.2rem;
-
-                p {
-                    margin: 8px 0 0 0; // Slightly more space above the soft skill description
-                    margin-left: 15px;
-                    font-size: 1rem; // Larger description text
-                }
-            }
-            .spoken-lang {
-                margin-bottom: 20px; // More space between each soft skill
-                margin-left: 20px;
-                font-size: 1.2rem;
-
-            }
-        }
-
-        .contact {
-            ul {
-                list-style: none; /* Remove bullets */
-                padding: 0; /* No extra padding */
-                margin: 0; /* No extra margin */
-        
-                li {
-                    display: flex; /* Align label and value in one row */
-                    align-items: center; /* Ensure vertical alignment */
-                    font-size: 1rem; /* Adjust font size as needed */
-                    margin-bottom: 8px; /* Space between items */
-        
-                    strong {
-                        font-weight: bold; /* Keep the label bold */
-                        margin-right: 5px; /* Space between label and value */
-                        white-space: nowrap; /* Prevent line wrapping for the label */
-                    }
-        
-                    span {
-                        font-size: 1rem; /* Ensure value has consistent font size */
-                        word-break: break-word; /* Prevent overflow by breaking long text */
-                    }
-                }
-            }
-        }
-        
-        
+      li {
+        margin-bottom: 10px;
+        font-size: 1.2rem;
+      }
     }
+
+    &.languages,
+    &.contact,
+    &.software,
+    &.soft-skills,
+    &.spoken-langs {
+      ul {
+        padding-left: 0px;
+        margin: 20px;
+      }
+
+      .soft-skill {
+        margin-bottom: 20px;
+        margin-left: 20px;
+        font-size: 1.2rem;
+
+        p {
+          margin: 8px 0 0 0;
+          margin-left: 15px;
+          font-size: 1rem;
+        }
+      }
+
+      .spoken-lang {
+        margin-bottom: 20px;
+        margin-left: 20px;
+        font-size: 1.2rem;
+      }
+    }
+
+    .contact {
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+          display: flex;
+          align-items: center;
+          font-size: 1rem;
+          margin-bottom: 8px;
+
+          strong {
+            font-weight: bold;
+            margin-right: 5px;
+            white-space: nowrap;
+          }
+
+          span {
+            font-size: 1rem;
+            word-break: break-word;
+          }
+        }
+      }
+    }
+  }
 }
 
 // Right Column
 .right-column {
-    .cv-header {
-        margin-bottom: 30px; // Increased spacing below the header
+  .cv-header {
+    margin-bottom: 30px;
 
-        h1 {
-            font-size: 2.5rem; // Larger heading size for name/title
-            color: $header-color;
-            margin: 0;
-        }
-
-        h2 {
-            font-size: 1.2rem; // Larger subtitle
-            color: $highlight-color;
-            margin: 10px 0 0 0;
-        }
+    h1 {
+      font-size: 2.5rem;
+      color: $header-color;
+      margin: 0;
     }
 
-    section {
-        margin-bottom: 40px; // Increased spacing between sections
+    h2 {
+      font-size: 1.2rem;
+      color: $highlight-color;
+      margin: 10px 0 0 0;
+    }
+  }
 
-        h2 {
-            font-size: 1.5rem; // Larger section headings
-            color: $header-color;
-            margin-bottom: 15px;
-        }
+  section {
+    margin-bottom: 40px;
 
-        .experience-item,
-        .spare-time,
-        .education-item {
-            margin-bottom: 30px; // More spacing between items
-
-            h3 {
-                font-size: 1rem; // Larger subheading size
-                color: $header-color;
-            }
-
-            h4 {
-                font-size: 14px; // Larger sub-subheading size
-                color: $highlight-color;
-            }
-
-            ul {
-                margin-top: 10px;
-
-                li {
-                    margin-bottom: 12px; // Increased spacing between list items
-                    font-size: 14px; // Larger text for list items
-                }
-            }
-        }
+    h2 {
+      font-size: 1.5rem;
+      color: $header-color;
+      margin-bottom: 15px;
     }
 
+    .experience-item,
+    .spare-time,
+    .education-item {
+      margin-bottom: 30px;
+
+      h3 {
+        font-size: 1rem;
+        color: $header-color;
+      }
+
+      h4 {
+        font-size: 14px;
+        color: $highlight-color;
+      }
+
+      ul {
+        margin-top: 10px;
+
+        li {
+          margin-bottom: 12px;
+          font-size: 14px;
+        }
+      }
+    }
+  }
 }
+
+// PRINT / PDF (Ctrl+P) – stabil A4
+@media print {
+  @page {
+    size: A4;
+    margin: 10mm;
+  }
+
+  html, body {
+    // Undgå at browseren laver sin egen skalering
+    width: 210mm;
+  }
+
+  .cv-container {
+    // Indholdet holder sig pænt inden for A4-margener
+    max-width: 190mm;
+    padding: 0;
+    margin: 0 auto;
+
+    // Slå effekter fra, som kan give clipping/sideskift
+    box-shadow: none !important;
+    background: #fff !important;
+  }
+
+  // Sikkerhed: ingen transformations i print
+  * {
+    transform: none !important;
+  }
+}
+
+/* Når Kendo laver PDF */
+.k-pdf-export .cv-container {
+  max-width: none !important;   // brug hele A4-bredden
+  width: 100% !important;
+  margin: 0 !important;         // ingen auto-centrering
+  padding: 0 !important;        // lad PDFExport styre margin hvis du vil
+  background: #fff !important;
+  box-shadow: none !important;  // undgå clipping
+}
+
+/* (valgfrit) slå print-regler fra der kan blande sig */
+.k-pdf-export html,
+.k-pdf-export body {
+  width: auto !important;
+}
+
