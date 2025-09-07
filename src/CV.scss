@@ -1,184 +1,136 @@
-// Global Styles
-$font-color: #333;
-$header-color: #444;
-$highlight-color: #007bff;
+// Global
+$font-color: #000000;
+$header-color:   #000000;  // section titles
+$sub-header-color: #222222; // company/school/etc
+$highlight-color: #444444;  // dates / accents
 
 body {
-    font-family: 'Roboto', sans-serif;
-    line-height: 1.5; // Increased line spacing for even better readability
-    color: $font-color;
-    width: 21cm;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.5;
+  color: $font-color;
+  width: 21cm; // for A4 export
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+}
+
+// Container
+.cv-container.single-column {
+  margin: 0 auto;
+  padding: 16px;
+  border-radius: 8px;
+  font-variant-ligatures: none;
+  font-feature-settings: "liga" 0;
+}
+
+// Header
+.cv-header {
+  margin-bottom: 16px;
+
+  h1 {
+    font-size: 2.2rem;
+    color: $sub-header-color;
     margin: 0;
+  }
+
+  // Quote
+  h2.quote {
+    font-size: 20px; // stronger without bold
+    color: $header-color;
+    margin: 0 0 10px;
+  }
+}
+
+// Contact icons grid
+.contact-icons {
+  margin: 8px 0 20px 0;
+
+  ul {
+    list-style: none;
     padding: 0;
-    font-size: 14px; // Increased base font size for larger text
-}
-
-// Container for the CV
-.cv-container {
-    margin: 0 auto;
-    padding: 5px;
-    background: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    font-family: 'Roboto', sans-serif;
-    font-variant-ligatures: none;
-    font-feature-settings: "liga" 0;
-    
-}
-
-// Layout with Two Columns
-.cv-layout {
     display: grid;
-    grid-template-columns: 1fr 2fr; // Left column: 1 unit, Right column: 2 units
-    gap: 10px;
+    grid-template-columns: repeat(2, minmax(0, 1fr)); // 2 per row
+    gap: 12px 16px;
+  }
+
+  li { display: flex; }
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: inherit;
+    padding: 6px 12px;
+    border-radius: 6px;
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.12);
+    width: 100%;
+  }
+
+  svg { width: 18px; height: 18px; stroke: #222; flex-shrink: 0; }
+  span { font-size: 0.95rem; line-height: 1; word-break: break-word; }
 }
 
-// Left Column
-.left-column {
-    background: #cfe0f2;
-    padding: 10px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-
-    .profile-image {
-        width: 100%;
-        border-radius: 5px;
-        margin: 0 auto 30px auto; // Increased margin for spacing below the image
-        display: block;
-    }
-
-    section {
-        margin-bottom: 30px; // Increased spacing between sections
-
-        h2 {
-            font-size: 1.8rem; // Larger section headings
-            color: $header-color;
-            margin-bottom: 15px;
-        }
-
-        ul {
-            list-style-type: none;
-            padding-left: 25px; // Slightly more indentation
-            margin: 20px; // Increased spacing around each section
-
-            li {
-                margin-bottom: 10px; // Increased space between list items
-                font-size: 1.2rem; // Larger text for list items
-            }
-        }
-
-        // Shared style for Languages, Software, and Soft Skills
-        &.languages,
-        &.contact,
-        &.software,
-        &.soft-skills,
-        &.spoken-langs {
-            ul {
-                padding-left: 0px; // Slightly more indentation
-                margin: 20px; // Consistent margin for all sections
-
-            }
-
-            .soft-skill {
-                margin-bottom: 20px; // More space between each soft skill
-                margin-left: 20px;
-                font-size: 1.2rem;
-
-                p {
-                    margin: 8px 0 0 0; // Slightly more space above the soft skill description
-                    margin-left: 15px;
-                    font-size: 1rem; // Larger description text
-                }
-            }
-            .spoken-lang {
-                margin-bottom: 20px; // More space between each soft skill
-                margin-left: 20px;
-                font-size: 1.2rem;
-
-            }
-        }
-
-        .contact {
-            ul {
-                list-style: none; /* Remove bullets */
-                padding: 0; /* No extra padding */
-                margin: 0; /* No extra margin */
-        
-                li {
-                    display: flex; /* Align label and value in one row */
-                    align-items: center; /* Ensure vertical alignment */
-                    font-size: 1rem; /* Adjust font size as needed */
-                    margin-bottom: 8px; /* Space between items */
-        
-                    strong {
-                        font-weight: bold; /* Keep the label bold */
-                        margin-right: 5px; /* Space between label and value */
-                        white-space: nowrap; /* Prevent line wrapping for the label */
-                    }
-        
-                    span {
-                        font-size: 1rem; /* Ensure value has consistent font size */
-                        word-break: break-word; /* Prevent overflow by breaking long text */
-                    }
-                }
-            }
-        }
-        
-        
-    }
+/* Keep 2 columns when printing */
+@media print {
+  .contact-icons ul {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
-// Right Column
-.right-column {
-    .cv-header {
-        margin-bottom: 30px; // Increased spacing below the header
+// Section titles (top-level)
+.section-title {
+  font-size: 20px;           // reads as bold without weight
+  color: $header-color;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 18px 0 10px;
+}
 
-        h1 {
-            font-size: 2.5rem; // Larger heading size for name/title
-            color: $header-color;
-            margin: 0;
-        }
+// Items (company/school/date)
+.experience-item,
+.education-item,
+.spare-time {
+  margin-bottom: 18px;
 
-        h2 {
-            font-size: 1.2rem; // Larger subtitle
-            color: $highlight-color;
-            margin: 10px 0 0 0;
-        }
-    }
+  h3 {
+    font-size: 16px;
+    color: $sub-header-color;
+    margin: 0 0 4px 0;
+  }
 
-    section {
-        margin-bottom: 40px; // Increased spacing between sections
+  h4 {
+    font-size: 13px;
+    color: $highlight-color;
+    margin: 0 0 8px 0;
+  }
+}
 
-        h2 {
-            font-size: 1.5rem; // Larger section headings
-            color: $header-color;
-            margin-bottom: 15px;
-        }
+// Soft skills & languages
+.soft-skill,
+.spoken-lang {
+  margin-bottom: 10px;
 
-        .experience-item,
-        .spare-time,
-        .education-item {
-            margin-bottom: 30px; // More spacing between items
+  p {
+    margin: 6px 0 0 0;
+  }
+}
 
-            h3 {
-                font-size: 1rem; // Larger subheading size
-                color: $header-color;
-            }
+.lang-line {
+  font-size: 14px;
+  margin: 0;
+  color: $sub-header-color;
+}
 
-            h4 {
-                font-size: 14px; // Larger sub-subheading size
-                color: $highlight-color;
-            }
+// Reduce page breaks inside items when printing
+.avoid-break {
+  break-inside: avoid-page;
+  page-break-inside: avoid;
+}
 
-            ul {
-                margin-top: 10px;
-
-                li {
-                    margin-bottom: 12px; // Increased spacing between list items
-                    font-size: 14px; // Larger text for list items
-                }
-            }
-        }
-    }
-
+/* Optional: print tweaks */
+@media print {
+  body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .cv-container { box-shadow: none; background: #fff; }
 }

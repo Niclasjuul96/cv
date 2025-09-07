@@ -1,192 +1,134 @@
-import React, { useRef } from "react";
+import React from "react";
 import user from "./Profile.js";
-import { PDFExport } from "@progress/kendo-react-pdf";
+import { Phone, Mail, Globe, LinkedinIcon } from "lucide-react";
 import "./CV.scss";
 
-
 const CV = () => {
-    // Sort software alphabetically by name
-    const sortedSoftware = [...user.software].sort((a, b) => a.name.localeCompare(b.name));
+  const telHref = `tel:${user.phone.replace(/\s+/g, "")}`;
+  const mailHref = `mailto:${user.mail}`;
 
-    // Sort languages by level (descending)
-    const sortedLanguages = [...user.languages].sort((a, b) => a.name.localeCompare(b.name));
+  return (
+    <div>
+      <div className="cv-container single-column">
+        {/* Header / Quote */}
+        <header className="cv-header">
+          <h2 className="quote">{user.qoute.en}</h2>
+        </header>
 
-    const pdfExportComponent = useRef(null);
+        {/* Contact (2 × 2) */}
+        <section className="contact-icons" aria-label="Contact">
+          <ul>
+            <li>
+              <a href={telHref} title={user.phone} aria-label={user.phone}>
+                <Phone />
+                <span>{user.phone}</span>
+              </a>
+            </li>
+            <li>
+              <a href={mailHref} title={user.mail} aria-label={user.mail}>
+                <Mail />
+                <span>{user.mail}</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href={user.webpage}
+                target="_blank"
+                rel="noreferrer"
+                title={user.webpage}
+                aria-label={user.webpage}
+              >
+                <Globe />
+                <span>{user.webpage}</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href={user.linkedin}
+                target="_blank"
+                rel="noreferrer"
+                title={user.linkedin}
+                aria-label={user.linkedin}
+              >
+                <LinkedinIcon />
+                <span>{user.linkedin}</span>
+              </a>
+            </li>
+          </ul>
+        </section>
 
-    document.title = "Niclas CV"
-    return (
-        <div>
-          {/* <button onClick={() => pdfExportComponent.current.save()}>Download as PDF</button> */}
-          <PDFExport ref={pdfExportComponent} fileName="Niclas_CV.pdf" paperSize="A4" scale={0.8} settings={{ content: { type: "svg" } }}>
-            <div className="cv-container">
-            {/* Two-column layout */}
-            <div className="cv-layout">
-                {/* Left Column */}
-                <div className="left-column">
-                    {/* Profile Picture */}
-                    <img
-                        src={user.image}
-                        alt={`${user.name} ${user.lastName}`}
-                        className="profile-image"
-                    />
+        {/* About Me */}
+        <section className="about-me">
+          <p>{user.info.en}</p>
+        </section>
 
-                    {/* Contact Info */}
-                    <section className="contact">
-                        <h2>Contact</h2>
-                        <ul>
-                            <li>
-                                <strong>Phone:</strong> <br /> <span>{user.phone}</span>
-                            </li>
-                            <li>
-                                <strong>Email:</strong> <br /> <span>{user.mail}</span>
-                            </li>
-                            <li>
-                                <strong>License:</strong> <br /> <span>{user.license}</span>
-                            </li>
-                            <li>
-                                <strong>Website:</strong> <br /> <span>{user.webpage}</span>
-                            </li>
-                            <li>
-                                <strong>Linkedin:</strong> <br /> <span>{user.linkedin}</span>
-                            </li>
-                            <li>
-                                <strong>Github:</strong> <br /> <span>{user.github}</span>
-                            </li>
-                        </ul>
-                    </section>
-
-                    {/* Software */}
-                    <section className="software">
-                        <h2>Software / OS</h2>
-                        <ul>
-                            {sortedSoftware.map((soft, index) => (
-                                <li key={index}>
-                                    - <strong>{soft.name}</strong>
-                                </li>
-                            ))}
-                        </ul>
-                    </section>
-                    <br/>
-                    {/* Languages */}
-                    <section className="languages">
-                        <h2>Stack</h2>
-                        <ul>
-                            {sortedLanguages.map((lang, index) => (
-                                <li key={index}>
-                                    - <strong>{lang.name}</strong> (Level {lang.level})
-                                </li>
-                            ))}
-                        </ul>
-                    </section>
-                    <br/>
-                    {/* Soft Skills */}
-                    <section className="soft-skills">
-                        <h2>Soft Skills</h2>
-                        {user.softSkills.map((skill, index) => (
-                            <div key={index} className="soft-skill">
-                                -{" "}
-                                <strong>
-                                    {typeof skill.name === "string"
-                                        ? skill.name
-                                        : skill.name.en}
-                                </strong>
-                                <p>{skill.text.en}</p>
-                            </div>
-                        ))}
-                    </section>
-
-                    {/*Spoken Langauges*/}
-                    <section className="spoken-langs">
-                        <h2>Langauges</h2>
-                        {user.spokenLangs.map((lang, index) => (
-                            <div key={index} className="spoken-lang">
-                                -{" "}
-                                <strong>
-                                    {lang.en}
-                                </strong>
-                            </div>
-                        ))}
-                    </section>
-                </div>
-
-                {/* Right Column */}
-                <div className="right-column">
-                    {/* Header Section */}
-                    <div className="cv-header">
-                        <h1>
-                            {user.name} {user.lastName}
-                        </h1>
-                        <h2>
-                            {user.title.en} - {user.title2.en}
-                        </h2>
-                    </div>
-
-                    {/* About Me */}
-                    <section className="about-me">
-                        <p>{user.info.en}</p>
-                    </section>
-
-                    {/* Work Experience */}
-                    <section className="work-experience">
-                        <h2>Work Experience</h2>
-                        {user.workExp.map((exp, index) => (
-                            <div key={index} className="experience-item">
-                                <h3>{exp.company}</h3>
-                                <h4>{exp.date}</h4>
-                                <ul>
-                                    {exp.assignments.map((assignment, idx) => (
-                                        <li key={idx}>{assignment.en}</li>
-                                    ))}
-                                </ul>
-                            </div>
-                        ))}
-                    </section>
-
-                    {/* Education */}
-                    <section className="education">
-                        <h2>Education</h2>
-                        {user.education.map((edu, index) => (
-                            <div key={index} className="education-item">
-                                <h3>{edu.name.en}</h3>
-                                <h4>{edu.date}</h4>
-                                <ul>
-                                    {edu.subjects.map((subject, idx) => (
-                                        <li key={idx}>{subject}</li>
-                                    ))}
-                                </ul>
-                            </div>
-                        ))}
-                    </section>
-
-                    {/* Other Experience */}
-                    <section className="other-experience">
-                        <h2>Other Experience</h2>
-                        {user.otherExp.map((exp, index) => (
-                            <div key={index} className="experience-item">
-                                <h3>{exp.name}</h3>
-                                <h4>{exp.date}</h4>
-                                <ul>
-                                    {exp.assignments.map((assignment, idx) => (
-                                        <li key={idx}>
-                                            {assignment.en}
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                        ))}
-                    </section>
-
-                    {/* Spare Time */}
-                    <section className="spare-time">
-                        <h2>Spare Time</h2>
-                        <p>{user.spareTime.en}</p>
-                    </section>
-                </div>
+        {/* Work Experience */}
+        <section className="work-experience">
+          <h2 className="section-title">Work Experience</h2>
+          {user.workExp.map((exp, i) => (
+            <div key={i} className="experience-item avoid-break">
+              <h3>{exp.company}</h3>
+              <h4>{exp.date}</h4>
+              <p>{exp.description.en}</p>
             </div>
-        </div>
-          </PDFExport>
-        </div>
-      );
+          ))}
+        </section>
+
+        {/* Education */}
+        <section className="education">
+          <h2 className="section-title">Education</h2>
+          {user.education.map((edu, i) => (
+            <div key={i} className="education-item avoid-break">
+              <h3>{edu.name.en}</h3>
+              <h4>{edu.date}</h4>
+              <p>{edu.description.en}</p>
+            </div>
+          ))}
+        </section>
+
+        {/* Soft Skills */}
+        <section className="soft-skills">
+          <h2 className="section-title">Soft Skills</h2>
+          {user.softSkills.map((skill, index) => (
+            <div key={index} className="soft-skill">
+              <h3>
+                {typeof skill.name === "string" ? skill.name : skill.name.en}
+              </h3>
+              <p>{skill.text.en}</p>
+            </div>
+          ))}
+        </section>
+
+        {/* Languages */}
+        <section className="spoken-langs">
+          <h2 className="section-title">Languages</h2>
+          {user.spokenLangs.map((lang, index) => (
+            <div key={index} className="spoken-lang">
+              <p className="lang-line">{lang.en}</p>
+            </div>
+          ))}
+        </section>
+
+        {/* Spare Time */}
+        <section className="spare-time">
+          <h2 className="section-title">Spare Time</h2>
+          <p>{user.spareTime.en}</p>
+        </section>
+
+        {/* Other Experience */}
+        <section className="other-experience">
+          <h2 className="section-title">Other Experience</h2>
+          {user.otherExp.map((exp, index) => (
+            <div key={index} className="experience-item avoid-break">
+              <h3>{exp.name}</h3>
+              <h4>{exp.date}</h4>
+              <p>{exp.description.en}</p>
+            </div>
+          ))}
+        </section>
+      </div>
+    </div>
+  );
 };
 
 export default CV;

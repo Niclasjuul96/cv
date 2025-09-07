@@ -1,28 +1,25 @@
-import profileImage from "./Profile.jpg";
-
 const user = {
     id: 0,
     name: "Niclas",
     lastName: "Juul Schæffer",
-    image: profileImage,
     title: { en: "Full-Stack Developer" },
     title2: { en: "Pragmatic problem solver" },
     phone: "+45 22 20 78 12",
     mail: "Niclasschaeffer96@gmail.com",
     license: "AM, B",
-    webpage: "https://niclasjuul.dk https://niclasjuul.com",
+    webpage: "https://niclasjuul.dk",
     linkedin: "https://www.linkedin.com/in/niclas-juul-schaeffer/",
     github: "https://github.com/Niclasjuul96",
     qoute: {
-        en: "Development is about creating solutions that are not only functional, but also scalable, user-friendly, and built to last.",
+        en: "Calm, user-focused developer with a bias for action and continuous learning.",
         da: "Udvikling handler om at skabe løsninger, der ikke kun er funktionelle, men også skalerbare, brugervenlige og bygget til at holde."
     },
     info: {
-        en: "Full-stack developer specializing in ASP.NET, C#, SQL Server, and Entity Framework. I build scalable "+
-        "backend APIs and intuitive frontend interfaces using React, JavaScript, HTML, and CSS. I also have experience with WordPress, "+
-        "where I develop custom themes and extend functionality beyond standard templates. In projects requiring data integration, "+
-        "I have worked with XML and XSLT to meet business and legacy system needs. I focus on writing clean, maintainable code and "+
-        "enjoy solving complex challenges through thoughtful and practical engineering.",
+        en: "Full-stack developer specializing in ASP.NET, C#, SQL Server, and Entity Framework. I build APIs, "+
+        "integrate XML and legacy systems, and craft intuitive React frontends. I also develop custom WordPress "+
+        "plugins and extend functionality beyond standard templates. I write clean, maintainable code and enjoy "+
+        "turning complex challenges into practical, robust solutions.",
+
 
         da: "Full-stack udvikler med speciale i ASP.NET, C#, SQL Server og Entity Framework. Jeg bygger skalerbare backend-API’er og "+
         "intuitive frontend-grænseflader med React, JavaScript, HTML og CSS. Jeg har også erfaring med WordPress, hvor jeg udvikler "+
@@ -31,267 +28,190 @@ const user = {
         "nyder at løse komplekse udfordringer gennem gennemtænkt og praktisk ingeniørarbejde."
     },
 
-skillInfo: {
-    en: "As you explore my profile, you'll discover my comprehensive skills as a full-stack developer. " +
-    "From building scalable backend solutions with ASP.NET, C# and SQL Server to creating intuitive " +
-    "frontend interfaces with React, JavaScript, HTML and CSS, I deliver clean and user-focused web applications. " +
-    "I also have experience with WordPress, developing custom themes and extending functionality, as well as " +
-    "working with XML and XSLT for data transformation and system integration. I am committed to continuous learning " +
-    "and take pride in writing maintainable, efficient code that solves real business challenges.",
+    skillInfo: {
+        en: "As you explore my profile, you'll discover my comprehensive skills as a full-stack developer. " +
+        "From building scalable backend solutions with ASP.NET, C# and SQL Server to creating intuitive " +
+        "frontend interfaces with React, JavaScript, HTML and CSS, I deliver clean and user-focused web applications. " +
+        "I also have experience with WordPress, developing custom themes and extending functionality, as well as " +
+        "working with XML and XSLT for data transformation and system integration. I am committed to continuous learning " +
+        "and take pride in writing maintainable, efficient code that solves real business challenges.",
 
-    da: "Når du udforsker min profil, vil du opdage mine omfattende færdigheder som full-stack udvikler. " +
-    "Fra at bygge skalerbare backend-løsninger med ASP.NET, C# og SQL Server til at skabe intuitive " +
-    "frontend-grænseflader med React, JavaScript, HTML og CSS leverer jeg rene og brugervenlige webapplikationer. " +
-    "Jeg har også erfaring med WordPress, hvor jeg har udviklet skræddersyede temaer og udvidet funktionalitet, " +
-    "samt arbejdet med XML og XSLT til datatransformation og systemintegration. Jeg er engageret i løbende læring " +
-    "og sætter en ære i at skrive vedligeholdelig og effektiv kode, der løser reelle forretningsbehov."
-},
-languages: [
-    { name: "Csharp", level: 3 },
-    { name: "ASP.net", level: 3 },
-    { name: "SqlServer", level: 3 },
-    { name: "React", level: 3 },
-    { name: "Js", level: 4 },
-    { name: "Typescript", level: 2 },
-    { name: "Css", level: 3 },
-    { name: "Html", level: 3 },
-    { name: "Git", level: 4 },
-    { name: "WordPress", level: 3 },
-    { name: "Php", level: 3 },
-    { name: "Python", level: 3 },
-    { name: "Java", level: 3 },
-    { name: "Springboot", level: 2 },
-    { name: "Mysql", level: 3 },
-    { name: "Electron", level: 2 },
-    { name: "Powershell", level: 2 },
-    { name: "Xml", level: 3 },
-    { name: "Xslt", level: 3 }
-],
-software: [
-    // Core developer stack
-    { name: "Visual Studio Community" },
-    { name: "VS Code" },
-    { name: "IntelliJ" },
-    { name: "GitHub" },
-    { name: "SQL Server Management Studio" },
-    { name: "Entity Framework" },
-    { name: "ASP.NET" },
-    { name: "Next.js" },
-    { name: "NestJS" },
-    { name: "Node.js" },
-    { name: "npm" },
-    { name: "React" },
-    { name: "WordPress" },
-    { name: "Prism (WPF)" },
-
-    // DevOps & system integration
-    { name: "Docker" },
-    { name: "Azure" },
-    { name: "Postman" },
-    { name: "Figma" },
-
-    // Operating systems & platforms
-    { name: "Windows" },
-    { name: "Linux" },
-    { name: "MacOS" },
-    { name: "VMware" },
-    { name: "Android" },
-
-    // IT-support / infrastructure background
-    { name: "Windows Server" },
-    { name: "Active Directory" },
-    { name: "Microsoft 365" },
-    { name: "PowerShell" },
-    { name: "Remote Desktop" },
-    { name: "TeamViewer" },
-    { name: "ServiceNow" },
-    { name: "Jira" },
-    { name: "Slack" },
-    { name: "Zoom" }
-],
+        da: "Når du udforsker min profil, vil du opdage mine omfattende færdigheder som full-stack udvikler. " +
+        "Fra at bygge skalerbare backend-løsninger med ASP.NET, C# og SQL Server til at skabe intuitive " +
+        "frontend-grænseflader med React, JavaScript, HTML og CSS leverer jeg rene og brugervenlige webapplikationer. " +
+        "Jeg har også erfaring med WordPress, hvor jeg har udviklet skræddersyede temaer og udvidet funktionalitet, " +
+        "samt arbejdet med XML og XSLT til datatransformation og systemintegration. Jeg er engageret i løbende læring " +
+        "og sætter en ære i at skrive vedligeholdelig og effektiv kode, der løser reelle forretningsbehov."
+    },
 
     softSkills: [
-        {
-            name: "Service-minded",
-            level: 4,
-            text: {
-                en: "Always putting the customer first and focusing on giving the customer the best possible experience.",
-                da: "Altid at sætte kunden først og fokusere på at give kunden den bedst mulige oplevelse."
-            }
-        },
-        {
-            name: {
-                en: "Punctual",
-                da: "Punktlig"
-            },
-            level: 3,
-            text: {
-                en: "I am detail oriented, would like to achieve a certain standard of what I develop.",
-                da: "Jeg er detaljeorienteret, vil gerne opnå en vis standard for det, jeg udvikler."
-            }
-        },
-        {
-            name: {
-                en: "Passionate",
-                da: "Lidenskabelig"
-            },
-            level: 5,
-            text: {
-                en: "I have a passion in this profession that makes me love what I do, which evolves into a better product. As it is of great importance to me that the product is made with a good standard.",
-                da: "Jeg har en passion i dette erhverv, som får mig til at elske det, jeg gør, og som udvikler sig til et bedre produkt. Da det er af stor betydning for mig, at produktet er lavet med en god standard."
-            }
+    {
+        name: { en: "Supporter (Green) profile", da: "Supporter (Grøn) profil" },
+        level: 5,
+        text: {
+        en: "A steady, people-first style that builds trust and harmony. I bring calm and stability "+
+        "to delivery and keep relationships strong over time.",
+        da: "En stabil, menneskefokuseret stil, der skaber tillid og harmoni. Jeg bidrager med ro og "+
+        "stabilitet i leverancer og vedligeholder stærke relationer over tid."
         }
+    },
+    {
+        name: { en: "Empathy & active listening", da: "Empati & aktiv lytning" },
+        level: 5,
+        text: {
+        en: "Stakeholder needs are heard and translated into practical solutions, so users feel included and understood.",
+        da: "Interessenters behov bliver hørt og oversat til praktiske løsninger, så brugerne føler sig inkluderet og forstået."
+        }
+    },
+    {
+        name: { en: "Reliability & follow-through", da: "Pålidelighed & opfølgning" },
+        level: 5,
+        text: {
+        en: "Commitments are kept, expectations set early, and loops closed. Teammates can depend on me—especially under pressure.",
+        da: "Aftaler bliver overholdt, forventninger afstemt tidligt, og der følges op. Teamet kan regne med mig—særligt under pres."
+        }
+    },
+    {
+        name: { en: "Calm, patient collaboration", da: "Roligt, tålmodigt samarbejde" },
+        level: 4,
+        text: {
+        en: "Conflicts are de-escalated and different views mediated to keep momentum without friction.",
+        da: "Konflikter nedtrappes, og forskellige synspunkter mægles, så fremdriften bevares uden friktion."
+        }
+    },
+    {
+        name: { en: "Quality & consistency", da: "Kvalitet & konsistens" },
+        level: 4,
+        text: {
+        en: "Maintainable solutions, clear naming, and predictable processes. Decisions are documented to support continuity.",
+        da: "Vedligeholdelige løsninger, klare navngivninger og forudsigelige processer. Beslutninger dokumenteres for at sikre kontinuitet."
+        }
+    },
+    {
+        name: { en: "Team dynamics", da: "Teamdynamik" },
+        level: 5,
+        text: {
+        en: "Pairs well with Red drivers (speed) by adding risk-awareness and stakeholder care; with Blue analysts "+
+        "(precision) by connecting details to user impact; with Yellow ideators (energy) by grounding ideas in "+
+        "executable plans. Best with clear goals, time to prepare, and open, respectful communication.",
+        da: "Matcher godt med Rød (tempo) ved at tilføre risikobevidsthed og fokus på interessenter; med "+
+        "Blå (præcision) ved at koble detaljer til brugerimpact; med Gul (energi) ved at forankre idéer i "+
+        "gennemførlige planer. Arbejder bedst med tydelige mål, forberedelsetid og åben, respektfuld kommunikation."
+        }
+    }
     ],
+
+
     workExp: [
-        {
-            date: "Mar. 2025 - now",
-            company: "ITAGIL - Developer",
-            assignments: [
-                { en: "Software Developer", da: "Softwareudvikler" },
-                { en: "Developing software for clients", da: "Udvikle software til kunder" },
-                { en: "Maintaining and optimizing software", da: "Vedligeholde og optimere software" },
-                { en: "Troubleshooting software issues", da: "Fejlfinding af softwareproblemer" },
-                { en: "Collaborating with team members", da: "Samarbejde med teammedlemmer" }
+  {
+    date: "Mar. 2025 - now",
+    company: "Developer - ITAGIL",
+    description: {
+      en: "At ITAGIL, tailored software solutions are developed for clients. The company's CMS is enhanced,"+
+      " and client websites are built and maintained to meet specific requirements. New features are delivered,"+
+      " existing systems are maintained and optimized, and issues are diagnosed and resolved to ensure reliability."+
+      " Projects are delivered efficiently and to a high standard through close team collaboration.",
+      da: "Hos ITAGIL udvikles skræddersyede softwareløsninger til kunder. Virksomhedens CMS videreudvikles,"+
+      " og kunders hjemmesider bygges og vedligeholdes efter deres behov. Nye funktioner leveres, eksisterende"+
+      " systemer vedligeholdes og optimeres, og problemer diagnosticeres og løses for at sikre stabil drift. "+
+      "Projekter leveres effektivt og i høj kvalitet gennem tæt samarbejde i teamet."
+    }
+  },
+  {
+    date: "Jun. 2022 - Aug. 2023",
+    company: "Webshop Assistant - Alex Cykler (Part time)",
+    description: {
+      en: "At Alex Cykler, the e-commerce webshop was established and maintained. Product listings were created"+
+      " and kept up to date to ensure accurate information across the platform. Warehouse operations were supported,"+
+      " including packing and shipping customer orders.",
+      da: "Hos Alex Cykler blev e-commerce-webshoppen etableret og vedligeholdt. Produktlister blev oprettet og "+
+      "løbende opdateret for at sikre korrekte oplysninger på platformen. Lageropgaver blev understøttet, herunder "+
+      "pakning og forsendelse af kundeordrer."
+    }
+  }
+],
 
-            ]
-        },
-        {
-            date: "Jun. 2022 - Aug. 2023",
-            company: "Alex Cykler (Part time) - Webshop Assistant",
-            assignments: [
-                { en: "Assisting to create a webshop (e-commence)", da: "Hjælpe med at lave en webshop (e-commence)"},
-                { en: "Creating Items in the webshop (e-commence)", da: "Oprette vare på webshoppen (e-commence)"},
-                { en: "Update item informations. (e-commence)", da: "Opdatere genstandes informationer (e-commence)"},
-                { en: "Helping on the warehouse", da: "Hjælpe på lageret"},
-                { en: "Pack and send packages", da: "Pakke og sende pakker"}
-            ]
-        },
-        {
-            date: "Aug. 2016 - May. 2022",
-            company: "Technical Education Copenhagen - IT Support Specialist",
-            assignments: [
-                { en: "IT-Support Internship", da: "IT-Support Elev" },
-                { en: "Web Developer", da: "Web udvikler" },
-                { en: "1st and 2nd Level IT Support", da: "1. og 2. niveau IT-support" },
-                { en: "Troubleshooting hardware and software issues", da: "Fejlfinding af hardware- og softwareproblemer" },
-                { en: "Technical assistance for users", da: "Teknisk support til brugere" },
-                { en: "System maintenance and optimization", da: "Vedligeholdelse og optimering af systemer" }
-            ]
-            
-        } 
-    ],
-    education: [
-        {
-            date: "Jun. 2022 - Feb. 2025",
-            name: {
-                en: "Software engineering at DTU",
-                da: "Software Engineering på DTU"
-            },
-            subjects: [
-                "Algorithms and Data Structures",
-                "Computer Systems",
-                "Introduction to Coordination of Distributed Applications",
-                "UX Design and Prototype Development",
-                "Software Engineering",
-                "Project Management",
-                "Physics 1",
-                "Introductory Programming"
-            ]
-        },
-        {
-            date: "Jan. 2016 - Jun. 2021",
-            name: {
-                en: "EUX TEC Ballerup - Datatechnitian specialized in Programming",
-                da: "EUX TEC Ballerup - Datatekniker med speciale i programmering"
-            },
-            subjects: [
-                "Information Technology.",
-                "Technical Subjects - Design and Production",
-                "Advanced Operating Systems",
-                "Backup Technology",
-                "Computer Technology",
-                "Server Technology - Linux",
-                "Server Technology - Database Server",
-                "Programming (Java)",
-                "Programming (C#)",
-                "Database Systems",
-                "IT Requirement Specification",
-                "System Development and Project Management",
-                "Virtualization",
-                "Embedded Controller",
-                "Programming of Mobile Applications",
-                "IT Service Management",
-                "Network Technology",
-                "Web Server Technology"
-            ]
-        },
-        {
-            date: "Jun. 2014 - Dec. 2015",
-            name: {
-                en: "STX Ørestad Gymnasium",
-                da: "STX Ørestad Gymnasium",
-            },
-            subjects: [
-                "Danish",
-                "Mathematics",
-                "Physics",
-                "BioTechnology"
-            ]
-        },
-        {
-            date: "Jun. 2013 - Jun. 2014",
-            name: {
-                en: "Odsherred Efterskole 10th grade",
-                da: "Odsherred Efterskole 10. klasse",
-            },
-            subjects: [
-                "Danish",
-                "Mathematics",
-                "Photography / Editing",
-                "cadet line subject"
-            ]
-        },
-        {
-            date: "Jun. 2003 - Jun. 2013",
-            name: {
-                en: "Public school Løjtegårdsskolen",
-                da: "Folkeskole Løjtegårdsskolen",
-            },
-            subjects: [
-                "Many subjects"
-            ]
-        }
-    ],
-    otherExp: [
-        {
-            date: "Dec. 2019 - Mar. 2025",
-            name: "Bog og Ide", 
-            assignments: [
-                { en: "Sales of books", da: "Salg af bøger"}, 
-                { en: "Sales of board games", da: "salg af brætspil"},
-                { en: "Sales of toys", da: "Salg af legetøj"},
-                { en: "Assisting Customers requests.", da: "giver god kundeservice" }
+education: [
+  {
+    date: "Jun. 2022 - Feb. 2025",
+    name: {
+      en: "Software engineering at DTU",
+      da: "Software Engineering på DTU"
+    },
+    description: {
+      en: "At DTU, a solid foundation in software engineering was established. Coursework included algorithms and data structures,"+
+      " computer systems, distributed applications, UX design and prototyping, and software engineering methodologies. "+
+      "Project management skills were developed, and practical programming assignments connected theory with application.",
+      da: "På DTU blev der opbygget et solidt fundament i software engineering. Forløbet omfattede algoritmer og datastrukturer,"+
+      " computersystemer, distribuerede applikationer, UX-design og prototypeudvikling samt software engineering-metoder. "+
+      "Projektledelseskompetencer blev udviklet, og praktiske programmeringsopgaver bandt teori sammen med anvendelse."
+    }
+  },
+  {
+    date: "Jan. 2016 - Jun. 2021",
+    name: {
+      en: "Datatechnitian specialized in Programming - EUX TEC Ballerup",
+      da: "Datatekniker med speciale i programmering - EUX TEC Ballerup"
+    },
+    description: {
+      en: "At EUX TEC Ballerup, a specialization as a datatechnician in programming was completed. "+
+      "Broad exposure was gained across IT disciplines, including Java and C# programming, database systems, "+
+      "Linux and Windows server technologies, virtualization, embedded systems, and mobile application development. "+
+      "Emphasis was also placed on IT service management, networking, and system development through project-oriented work.",
+      da: "På EUX TEC Ballerup blev en specialisering som datatekniker med fokus på programmering gennemført. "+
+      "Der blev opnået bred indsigt i IT-discipliner, herunder programmering i Java og C#, databasesystemer, "+
+      "Linux- og Windows-serverteknologier, virtualisering, indlejrede systemer og udvikling af mobile applikationer. "+
+      "Der blev også lagt vægt på IT-service management, netværk og systemudvikling gennem projektorienteret arbejde."
+    }
+  }
+],
 
-            ]
-        },
-        {
-            date: "Apr. 2017 - Jun. 2021",
-            name: "Beredskabets venner",
-            assignments: [
-                { en: "Customer service", da: "Kundeservice"}, 
-                { en: "Communications", da: "kommunikation"},
-                { en: "Situation handling", da: "Situations håndtering"},  
-            ]
-        }
-    ],
+otherExp: [
+  {
+    date: "Dec. 2019 - Mar. 2025",
+    name: "Bog og Ide",
+    description: {
+      en: "Sales and customer service activities were handled, including selling books, board games, and toys "+
+      "and assisting customers with their requests. Communication skills were strengthened and a service-minded "+
+      "approach was reinforced.",
+      da: "Salg og kundeservice blev håndteret, herunder salg af bøger, brætspil og legetøj samt hjælp til "+
+      "kunders forespørgsler. Kommunikationsevner blev styrket, og en serviceorienteret tilgang blev understøttet."
+    }
+  },
+  {
+    date: "Aug. 2016 - May. 2022",
+    name: "IT Support Specialist - Technical Education Copenhagen",
+    description: {
+      en: "First- and second-level support was provided, with hardware and software issues diagnosed and resolved and "+
+      "technical assistance delivered to users. System maintenance and optimization were carried out, while experience "+
+      "was gained in web development and IT service management.",
+      da: "1. og 2. level support blev ydet, hvor hardware- og softwareproblemer blev diagnosticeret og løst, og "+
+      "teknisk assistance blev leveret til brugere. Systemvedligeholdelse og optimering blev udført, og der blev "+
+      "opnået erfaring med webudvikling og IT-service management."
+    }
+  },
+  {
+    date: "Apr. 2017 - Jun. 2021",
+    name: "Beredskabets venner",
+    description: {
+      en: "Tasks related to customer service, communications, and situation handling were supported, fostering a "+
+      "calm and solution-oriented approach to unexpected challenges.",
+      da: "Opgaver inden for kundeservice, kommunikation og situationshåndtering blev understøttet, "+
+      "hvilket styrkede en rolig og løsningsorienteret tilgang til uventede udfordringer."
+    }
+  }
+],
+
+
     spareTime: {
-        en: "I spend most of my spare time with my family, including my two kids, " +
+        en: "I spend most of my spare time with my family, including my two kids, "+
         "enjoying quality moments together. Additionally, I prioritize staying active by "+
         "running and going to the gym, which helps me maintain both physical and mental well-being.",
-        da: "Jeg bruger det meste af min fritid sammen med min familie, herunder mine to børn, " + 
-        "hvor vi nyder kvalitetstid sammen. Derudover prioriterer jeg at holde mig aktiv ved at løbe " + 
+        da: "Jeg bruger det meste af min fritid sammen med min familie, herunder mine to børn, "+
+        "hvor vi nyder kvalitetstid sammen. Derudover prioriterer jeg at holde mig aktiv ved at løbe "+
         "og gå i fitness, hvilket hjælper mig med at opretholde både fysisk og mental velvære."
     },
+
     spokenLangs: [
         { en: "Danish - Native", da: "Dansk - Modersmål" },
         { en: "English - Fluent", da: "Engelsk - Flydende" }
