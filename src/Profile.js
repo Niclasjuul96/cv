@@ -20,12 +20,15 @@ const user = {
         "plugins and extend functionality beyond standard templates. I write clean, maintainable code and enjoy "+
         "turning complex challenges into practical, robust solutions.",
 
+        en: "Full-stack developer with broad knowledge across different technologies and frameworks. I have worked most with " +
+        "ASP.NET, C#, SQL Server, and Entity Framework for backend development, and React, JavaScript, HTML, and CSS for building " +
+        "frontend interfaces. I also have experience with WordPress (custom themes/plugins) and data integration using XML/XSLT. " +
+        "I focus on writing clean, maintainable code and enjoy solving complex problems with practical solutions.",
 
-        da: "Full-stack udvikler med speciale i ASP.NET, C#, SQL Server og Entity Framework. Jeg bygger skalerbare backend-API’er og "+
-        "intuitive frontend-grænseflader med React, JavaScript, HTML og CSS. Jeg har også erfaring med WordPress, hvor jeg udvikler "+
-        "skræddersyede temaer og udvider funktionaliteten ud over standardløsninger. I projekter med dataintegration har jeg arbejdet "+
-        "med XML og XSLT for at imødekomme både forretningsmæssige og legacy-krav. Jeg har fokus på at skrive ren, vedligeholdelig kode og "+
-        "nyder at løse komplekse udfordringer gennem gennemtænkt og praktisk ingeniørarbejde."
+        da: "Full-stack udvikler med bred viden indenfor forskellige teknologier og frameworks. Jeg har især arbejdet med " +
+        "ASP.NET, C#, SQL Server og Entity Framework til backend-udvikling samt React, JavaScript, HTML og CSS til at bygge " +
+        "frontend-grænseflader. Jeg har også erfaring med WordPress (custom temaer/plugins) og dataintegration med XML/XSLT. " +
+        "Jeg fokuserer på at skrive ren, vedligeholdelig kode og nyder at løse komplekse problemer med praktiske løsninger."
     },
 
     skillInfo: {
