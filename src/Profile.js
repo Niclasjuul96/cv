@@ -15,15 +15,9 @@ const user = {
         da: "Udvikling handler om at skabe løsninger, der ikke kun er funktionelle, men også skalerbare, brugervenlige og bygget til at holde."
     },
     info: {
-        en: "Full-stack developer specializing in ASP.NET, C#, SQL Server, and Entity Framework. I build APIs, "+
-        "integrate XML and legacy systems, and craft intuitive React frontends. I also develop custom WordPress "+
-        "plugins and extend functionality beyond standard templates. I write clean, maintainable code and enjoy "+
-        "turning complex challenges into practical, robust solutions.",
-
-        en: "Full-stack developer with broad knowledge across different technologies and frameworks. I have worked most with " +
-        "ASP.NET, C#, SQL Server, and Entity Framework for backend development, and React, JavaScript, HTML, and CSS for building " +
-        "frontend interfaces. I also have experience with WordPress (custom themes/plugins) and data integration using XML/XSLT. " +
-        "I focus on writing clean, maintainable code and enjoy solving complex problems with practical solutions.",
+        en: "Full-stack developer specializing in ASP.NET, C#, SQL Server, and Entity Framework. I build APIs, integrate XML and legacy systems, "+
+        "and craft intuitive React frontends. I also develop custom WordPress plugins and extend functionality beyond standard templates. I write clean, "+
+        "maintainable code and enjoy turning complex challenges into practical, robust solutions.",
 
         da: "Full-stack udvikler med bred viden indenfor forskellige teknologier og frameworks. Jeg har især arbejdet med " +
         "ASP.NET, C#, SQL Server og Entity Framework til backend-udvikling samt React, JavaScript, HTML og CSS til at bygge " +
@@ -47,62 +41,56 @@ const user = {
         "og sætter en ære i at skrive vedligeholdelig og effektiv kode, der løser reelle forretningsbehov."
     },
 
-    softSkills: [
-    {
-        name: { en: "Supporter (Green) profile", da: "Supporter (Grøn) profil" },
-        level: 5,
-        text: {
-        en: "A steady, people-first style that builds trust and harmony. I bring calm and stability "+
-        "to delivery and keep relationships strong over time.",
-        da: "En stabil, menneskefokuseret stil, der skaber tillid og harmoni. Jeg bidrager med ro og "+
-        "stabilitet i leverancer og vedligeholder stærke relationer over tid."
-        }
-    },
-    {
-        name: { en: "Empathy & active listening", da: "Empati & aktiv lytning" },
-        level: 5,
-        text: {
-        en: "Stakeholder needs are heard and translated into practical solutions, so users feel included and understood.",
-        da: "Interessenters behov bliver hørt og oversat til praktiske løsninger, så brugerne føler sig inkluderet og forstået."
-        }
-    },
-    {
-        name: { en: "Reliability & follow-through", da: "Pålidelighed & opfølgning" },
-        level: 5,
-        text: {
-        en: "Commitments are kept, expectations set early, and loops closed. Teammates can depend on me—especially under pressure.",
-        da: "Aftaler bliver overholdt, forventninger afstemt tidligt, og der følges op. Teamet kan regne med mig—særligt under pres."
-        }
-    },
-    {
-        name: { en: "Calm, patient collaboration", da: "Roligt, tålmodigt samarbejde" },
-        level: 4,
-        text: {
-        en: "Conflicts are de-escalated and different views mediated to keep momentum without friction.",
-        da: "Konflikter nedtrappes, og forskellige synspunkter mægles, så fremdriften bevares uden friktion."
-        }
-    },
-    {
-        name: { en: "Quality & consistency", da: "Kvalitet & konsistens" },
-        level: 4,
-        text: {
-        en: "Maintainable solutions, clear naming, and predictable processes. Decisions are documented to support continuity.",
-        da: "Vedligeholdelige løsninger, klare navngivninger og forudsigelige processer. Beslutninger dokumenteres for at sikre kontinuitet."
-        }
-    },
-    {
-        name: { en: "Team dynamics", da: "Teamdynamik" },
-        level: 5,
-        text: {
-        en: "Pairs well with Red drivers (speed) by adding risk-awareness and stakeholder care; with Blue analysts "+
-        "(precision) by connecting details to user impact; with Yellow ideators (energy) by grounding ideas in "+
-        "executable plans. Best with clear goals, time to prepare, and open, respectful communication.",
-        da: "Matcher godt med Rød (tempo) ved at tilføre risikobevidsthed og fokus på interessenter; med "+
-        "Blå (præcision) ved at koble detaljer til brugerimpact; med Gul (energi) ved at forankre idéer i "+
-        "gennemførlige planer. Arbejder bedst med tydelige mål, forberedelsetid og åben, respektfuld kommunikation."
-        }
+   softSkills: [
+  {
+    name: { en: "People-centred coordination (ESFJ-T)", da: "Menneskecentreret koordinering (ESFJ-T)" },
+    level: 5,
+    text: {
+      en: "Warm, inclusive facilitation that builds trust and momentum. Everyone is heard, morale is protected, and collaboration stays smooth.",
+      da: "Varm, inkluderende facilitering, der skaber tillid og fremdrift. Alle bliver hørt, trivslen prioriteres, og samarbejdet forbliver smidigt."
     }
-    ],
+  },
+  {
+    name: { en: "Stakeholder communication & empathy", da: "Interessentkommunikation & empati" },
+    level: 5,
+    text: {
+      en: "Needs are translated into clear, actionable requirements; expectations are aligned early; the user perspective is kept front and centre.",
+      da: "Behov oversættes til klare, handlingsorienterede krav; forventninger afstemmes tidligt; brugerperspektivet holdes i fokus."
+    }
+  },
+  {
+    name: { en: "Structure & follow-through", da: "Struktur & opfølgning" },
+    level: 5,
+    text: {
+      en: "Plans, priorities, and checklists keep delivery on time. Loose ends are closed and ceremonies run predictably.",
+      da: "Planer, prioriteringer og tjeklister sikrer rettidig levering. Løse ender lukkes, og ceremonier kører forudsigeligt."
+    }
+  },
+  {
+    name: { en: "Quality & consistency", da: "Kvalitet & konsistens" },
+    level: 4,
+    text: {
+      en: "Clear standards, naming, documentation, and acceptance criteria. Pragmatic quality that supports maintainability.",
+      da: "Tydelige standarder, navngivning, dokumentation og acceptkriterier. Pragmatisk kvalitet, der understøtter vedligeholdelse."
+    }
+  },
+  {
+    name: { en: "Feedback-driven growth", da: "Feedback-drevet udvikling" },
+    level: 4,
+    text: {
+      en: "Feedback is actively sought and turned into concrete improvements. Sensitive to signals yet resilient and adaptive.",
+      da: "Feedback opsøges aktivt og omsættes til konkrete forbedringer. Følsom for signaler, men robust og omstillingsparat."
+    }
+  },
+  {
+    name: { en: "Team dynamics (ESFJ-T)", da: "Teamdynamik (ESFJ-T)" },
+    level: 5,
+    text: {
+      en: "Pairs well with analysts by humanising data; with ideators by turning ideas into clear plans; with drivers by aligning people and process. Creates psychological safety and sustained pace.",
+      da: "Matcher godt med analytikere (præcision) ved at humanisere data; med idéskabere (vision) ved at omsætte idéer til klare planer; med drivere (tempo) ved at skabe alignment mellem mennesker og proces. Skaber psykologisk tryghed og vedvarende tempo."
+    }
+  }
+],
 
 
     workExp: [
@@ -204,7 +192,6 @@ otherExp: [
     }
   }
 ],
-
 
     spareTime: {
         en: "I spend most of my spare time with my family, including my two kids, "+

@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import user from "./Profile.js";
 import { Phone, Mail, Globe, LinkedinIcon } from "lucide-react";
 import "./CV.scss";
@@ -6,6 +6,7 @@ import "./CV.scss";
 const CV = () => {
   const telHref = `tel:${user.phone.replace(/\s+/g, "")}`;
   const mailHref = `mailto:${user.mail}`;
+  useEffect(() => { document.title = "Niclas CV"; }, []);
 
   return (
     <div>
