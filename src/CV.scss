@@ -23,6 +23,30 @@ body {
   font-feature-settings: "liga" 0;
 }
 
+// ===== Language Toggle (screen only, hidden in print with .no-print) =====
+.lang-toggle {
+  margin: 8px auto 0;
+  padding: 8px 16px 0;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+
+  button {
+    padding: 4px 10px;
+    font-size: 13px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background: #f7f7f7;
+    cursor: pointer;
+
+    &.active {
+      font-weight: 600;
+      border-color: #000;
+      background: #e5e5e5;
+    }
+  }
+}
+
 // ===== Header / Quote =====
 .cv-header {
   margin-bottom: 16px;
@@ -133,5 +157,9 @@ body {
 
   .contact-icons ul {
     grid-template-columns: repeat(2, minmax(0, 1fr)); // keep 2 per row on print
+  }
+
+  .no-print {
+    display: none !important;
   }
 }
