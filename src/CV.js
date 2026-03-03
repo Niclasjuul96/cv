@@ -13,7 +13,7 @@ const CV = () => {
     document.title = lang === "en" ? "Niclas CV" : "Niclas CV";
   }, [lang]);
 
-    // Helper: render dates that can be string OR array of strings
+  // Helper: render dates that can be string OR array of strings
   const renderDate = (date) => {
     if (Array.isArray(date)) {
       // show each period on its own line

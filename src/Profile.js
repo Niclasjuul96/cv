@@ -11,23 +11,24 @@ const user = {
   linkedin: "https://www.linkedin.com/in/niclas-juul-schaeffer/",
   github: "https://github.com/Niclasjuul96",
   qoute: {
-    en: "Calm, user-focused IT specialist who moves confidently between development, support and operations.",
-    da: "Rolig, brugernær IT-professionel, der bevæger sig sikkert mellem udvikling, support og drift."
-  },
+    en: "Service-minded IT supporter who takes ownership, solves issues thoroughly and makes technology feel simple.",
+    da: "Serviceminded IT-supporter, der tager ansvar, løser problemer grundigt og gør teknologi enkel for brugeren."
+},
   info: {
     en:
-      "IT generalist with a combined background in full-stack development, IT support and customer-facing work. " +
-      "I build and maintain solutions with ASP.NET, C#, SQL Server and Entity Framework, and create intuitive React frontends. " +
-      "Through earlier roles in IT support and retail, I am used to meeting users where they are, translating needs into " +
-      "practical solutions and following issues through until they are resolved. I enjoy connecting systems, people and " +
-      "processes so that everyday work becomes simpler and more reliable.",
+      "IT supporter with experience in both 1st and 2nd level support and technical problem-solving. " +
+      "I work structured and take ownership of cases from first contact to final resolution. " +
+      "With a background in both IT and customer-facing roles, I am used to explaining technical issues " +
+      "in a clear and calm way, even when things are busy. My technical foundation in systems and development " +
+      "gives me a strong understanding of how solutions are built, but my focus is always on creating a smooth " +
+      "and reliable experience for the end user.",
 
     da:
-      "IT-generalist med en kombineret baggrund inden for full-stack udvikling, IT-support og kundevendte roller. " +
-      "Jeg bygger og vedligeholder løsninger med ASP.NET, C#, SQL Server og Entity Framework og udvikler intuitive " +
-      "frontend-grænseflader i React. Gennem tidligere roller i IT-support og detailhandel er jeg vant til at møde " +
-      "brugerne i øjenhøjde, omsætte behov til praktiske løsninger og følge sager helt til dørs. Jeg trives med at " +
-      "binde systemer, mennesker og processer sammen, så hverdagen bliver enklere og mere driftssikker."
+      "IT-supporter med erfaring inden for både 1st og 2nd level support og teknisk fejlfinding. " +
+      "Jeg arbejder struktureret og tager ansvar for mine sager fra første henvendelse til endelig løsning. " +
+      "Med baggrund i både IT og kundevendte roller er jeg vant til at forklare tekniske problemstillinger " +
+      "klart og roligt, også når der er travlt. Min tekniske forståelse giver mig et solidt fundament, " +
+      "men mit fokus er altid at skabe en stabil og tryg oplevelse for brugeren."
   },
 
   skillInfo: {
