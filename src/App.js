@@ -1,14 +1,16 @@
-import React from "react"
-import CV from "./CV";
+import React from 'react';
+import { LanguageProvider } from './context/LanguageContext';
+import { RoleProvider } from './context/RoleContext';
+import { CV } from './components/CV';
 
-function App() {
+export const App = () => {
   return (
-    
-    <div>
-      <title>Niclas' CV</title>
-      <CV />
-    </div>
+    <RoleProvider>
+      <LanguageProvider>
+        <CV />
+      </LanguageProvider>
+    </RoleProvider>
   );
-}
+};
 
 export default App;
