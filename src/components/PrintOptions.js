@@ -10,9 +10,10 @@ export const PrintOptions = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [copied, setCopied] = useState(false);
 
-  const generateFilename = (targetRole) => {
+  const generateFilename = (targetRole, targetLang) => {
     const roleText = targetRole === 'developer' ? 'SoftwareEngineer' : 'ITSupport';
-    return `Niclas_JuulSchaeffer_${roleText}.pdf`;
+    const langText = targetLang === 'en' ? 'EN' : 'DA';
+    return `Niclas_JuulSchaeffer_${roleText}_${langText}.pdf`;
   };
 
   const copyToClipboard = (filename) => {
@@ -25,18 +26,7 @@ export const PrintOptions = () => {
     // Switch to the desired language and role
     switchLanguage(targetLang);
     switchRole(targetRole);
-
-    // Get the filename for display
-    const filename = generateFilename(targetRole);
-
-    // Give React time to re-render with new values
-    setTimeout(() => {
-      // Alert user with the suggested filename
-      alert(`Suggested filename:\n\n${filename}\n\nClick "Save" in the print dialog and use this name.`);
-      
-      // Trigger print dialog
-      window.print();
-    }, 100);
+    // No print dialog - just switch and let user see the filename
   };
 
   const presets = [
@@ -46,7 +36,7 @@ export const PrintOptions = () => {
     { lang: 'da', role: 'it-support', label: '🛠️ Dansk - IT Support' },
   ];
 
-  const currentFilename = generateFilename(role);
+  const currentFilename = generateFilename(role, lang);
 
   return (
     <>
@@ -79,7 +69,7 @@ export const PrintOptions = () => {
             <div className="print-options-presets">
               <p className="preset-intro">Quick export combinations:</p>
               {presets.map((preset) => {
-                const filename = generateFilename(preset.role);
+                const filename = generateFilename(preset.role, preset.lang);
                 return (
                   <div key={`${preset.lang}-${preset.role}`} className="preset-item">
                     <button
@@ -89,7 +79,6 @@ export const PrintOptions = () => {
                       }`}
                       onClick={() => {
                         generatePDF(preset.lang, preset.role);
-                        setIsOpen(false);
                       }}
                     >
                       {preset.label}
@@ -103,6 +92,7 @@ export const PrintOptions = () => {
             <div className="print-options-current">
               <p className="current-label">Current selection:</p>
               <p className="current-value">
+                Language: <strong>{lang === 'en' ? 'English' : 'Dansk'}</strong> | 
                 Role: <strong>{role === 'developer' ? 'Software Engineer' : 'IT Support'}</strong>
               </p>
               
@@ -125,9 +115,7 @@ export const PrintOptions = () => {
                 type="button"
                 className="print-current-btn"
                 onClick={() => {
-                  alert(`Suggested filename:\n\n${currentFilename}\n\nClick "Save" in the print dialog and use this name.`);
                   window.print();
-                  setIsOpen(false);
                 }}
               >
                 🖨️ Print Current Selection
@@ -136,7 +124,7 @@ export const PrintOptions = () => {
 
             <div className="print-options-help">
               <p className="help-text">
-                💡 <strong>How to export:</strong> Click a preset, the suggested filename will appear, then save as PDF with that name in your print dialog.
+                💡 <strong>How to use:</strong> Select a preset to switch role/language, copy the suggested filename (includes language code), then click "Print" and save as PDF.
               </p>
             </div>
           </div>
