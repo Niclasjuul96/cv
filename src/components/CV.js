@@ -6,6 +6,7 @@ import { getRoleSpecificContent } from '../data/roleContent';
 import { SECTION_LABELS } from '../constants/labels';
 import { LanguageToggle } from './LanguageToggle';
 import { RoleToggle } from './RoleToggle';
+import { PrintOptions } from './PrintOptions';
 import { CVHeader } from './CVHeader';
 import { ContactSection } from './ContactSection';
 import { AboutSection } from './AboutSection';
@@ -28,6 +29,7 @@ export const CV = () => {
     <div>
       <LanguageToggle />
       <RoleToggle />
+      <PrintOptions />
 
       <div className="cv-container single-column">
         <CVHeader name={user.name} lastName={user.lastName} title={title} quote={quote} />
