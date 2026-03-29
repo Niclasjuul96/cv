@@ -6,6 +6,7 @@ export const RoleContext = createContext();
 export const ROLES = {
   DEVELOPER: 'developer',
   IT_SUPPORT: 'it-support',
+  GENERAL: 'general',
 };
 
 export const RoleProvider = ({ children }) => {
@@ -22,6 +23,7 @@ export const RoleProvider = ({ children }) => {
     switchRole,
     isDeveloper: role === ROLES.DEVELOPER,
     isITSupport: role === ROLES.IT_SUPPORT,
+    isGeneral: role === ROLES.GENERAL,
   };
 
   return (

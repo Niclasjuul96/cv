@@ -25,6 +25,43 @@ export const CV = () => {
   const quote = roleContent?.quote || user.qoute;
   const info = roleContent?.info || user.info;
 
+  // Helper function to extract end year from date string for sorting
+  const getEndYear = (dateString) => {
+    if (Array.isArray(dateString)) {
+      dateString = dateString[0];
+    }
+    const parts = dateString.split(' - ');
+    if (parts.length === 2) {
+      const year = parseInt(parts[1].match(/\d{4}/)[0]);
+      return year;
+    }
+    return 0;
+  };
+
+  // Helper function to combine and sort all experience by date (newest first)
+  const getCombinedAndSortedExperience = () => {
+    const combined = [
+      ...user.workExp.map(exp => ({
+        ...exp,
+        company: exp.company,
+        isWorkExp: true
+      })),
+      ...user.otherExp.map(exp => ({
+        ...exp,
+        company: exp.name,
+        isWorkExp: false
+      }))
+    ];
+    
+    return combined.sort((a, b) => {
+      const yearA = getEndYear(a.date);
+      const yearB = getEndYear(b.date);
+      return yearB - yearA;
+    });
+  };
+
+  const sortedExperience = getCombinedAndSortedExperience();
+
   return (
     <div>
       <LanguageToggle />
@@ -43,17 +80,32 @@ export const CV = () => {
 
         <AboutSection aboutText={info} />
 
-        {/* Work Experience */}
-        <CVSection title={SECTION_LABELS.workExperience[lang]} testId="work-section">
-          {user.workExp.map((exp, idx) => (
-            <ExperienceItem
-              key={`work-${idx}`}
-              company={exp.company}
-              date={exp.date}
-              description={exp.description}
-            />
-          ))}
-        </CVSection>
+        {/* Work Experience - Combined for General Role */}
+        {role === 'general' ? (
+          <CVSection title={SECTION_LABELS.workExperience[lang]} testId="work-section">
+            {sortedExperience.map((exp, idx) => (
+              <ExperienceItem
+                key={`exp-${idx}`}
+                company={exp.company}
+                date={exp.date}
+                description={exp.description}
+              />
+            ))}
+          </CVSection>
+        ) : (
+          <>
+            <CVSection title={SECTION_LABELS.workExperience[lang]} testId="work-section">
+              {user.workExp.map((exp, idx) => (
+                <ExperienceItem
+                  key={`work-${idx}`}
+                  company={exp.company}
+                  date={exp.date}
+                  description={exp.description}
+                />
+              ))}
+            </CVSection>
+          </>
+        )}
 
         {/* Education */}
         <CVSection title={SECTION_LABELS.education[lang]} testId="education-section">
@@ -88,17 +140,19 @@ export const CV = () => {
           <p>{user.spareTime[lang]}</p>
         </CVSection>
 
-        {/* Other Experience */}
-        <CVSection title={SECTION_LABELS.otherExperience[lang]} testId="other-exp-section">
-          {user.otherExp.map((exp, idx) => (
-            <ExperienceItem
-              key={`other-exp-${idx}`}
-              company={exp.name}
-              date={exp.date}
-              description={exp.description}
-            />
-          ))}
-        </CVSection>
+        {/* Other Experience - Only shown for non-General roles */}
+        {role !== 'general' && (
+          <CVSection title={SECTION_LABELS.otherExperience[lang]} testId="other-exp-section">
+            {user.otherExp.map((exp, idx) => (
+              <ExperienceItem
+                key={`other-exp-${idx}`}
+                company={exp.name}
+                date={exp.date}
+                description={exp.description}
+              />
+            ))}
+          </CVSection>
+        )}
       </div>
     </div>
   );

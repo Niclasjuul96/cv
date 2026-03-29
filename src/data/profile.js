@@ -186,6 +186,16 @@ const user = {
 
   otherExp: [
     {
+      date: "Jan. 2026 - Feb. 2026",
+      name: "Thansen",
+      description: {
+        en:
+          "In the role at Thansen, customer service and sales activities were handled, including selling automotive parts and accessories and assisting customers with their requests. Communication skills were strengthened and a service-minded approach was reinforced.",
+        da:
+          "I rollen hos Thansen blev kundeservice- og salgsaktiviteter håndteret, herunder salg af bildel og tilbehør samt hjælp til kunders forespørgsler. Kommunikationsevner blev styrket, og en serviceorienteret tilgang blev understøttet."
+      }
+    },
+    {
       // Multiple periods in the same role
       date: ["Dec. 2019 - Mar. 2025", "Dec. 2025 - Dec. 2025"],
       name: "Bog og Ide",

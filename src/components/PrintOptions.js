@@ -11,7 +11,10 @@ export const PrintOptions = () => {
   const [copied, setCopied] = useState(false);
 
   const generateFilename = (targetRole, targetLang) => {
-    const roleText = targetRole === 'developer' ? 'SoftwareEngineer' : 'ITSupport';
+    let roleText = 'General';
+    if (targetRole === 'developer') roleText = 'SoftwareEngineer';
+    else if (targetRole === 'it-support') roleText = 'ITSupport';
+    
     const langText = targetLang === 'en' ? 'EN' : 'DA';
     return `Niclas_JuulSchaeffer_${roleText}_${langText}.pdf`;
   };
@@ -32,8 +35,10 @@ export const PrintOptions = () => {
   const presets = [
     { lang: 'en', role: 'developer', label: '💻 English - Software Engineer' },
     { lang: 'en', role: 'it-support', label: '🛠️ English - IT Support' },
+    { lang: 'en', role: 'general', label: '👤 English - General Profile' },
     { lang: 'da', role: 'developer', label: '💻 Dansk - Softwareudvikler' },
     { lang: 'da', role: 'it-support', label: '🛠️ Dansk - IT Support' },
+    { lang: 'da', role: 'general', label: '👤 Dansk - Generel Profil' },
   ];
 
   const currentFilename = generateFilename(role, lang);
@@ -93,7 +98,7 @@ export const PrintOptions = () => {
               <p className="current-label">Current selection:</p>
               <p className="current-value">
                 Language: <strong>{lang === 'en' ? 'English' : 'Dansk'}</strong> | 
-                Role: <strong>{role === 'developer' ? 'Software Engineer' : 'IT Support'}</strong>
+                Role: <strong>{role === 'developer' ? 'Software Engineer' : role === 'it-support' ? 'IT Support' : 'General Profile'}</strong>
               </p>
               
               <div className="filename-display">

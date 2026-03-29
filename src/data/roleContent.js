@@ -65,6 +65,36 @@ export const getRoleSpecificContent = (role, lang = 'en') => {
           "udfordringer grundigt og give pålidelige, langsigtede løsninger."
       }
     };
+  } else if (role === 'general') {
+    return {
+      title: 'Professional Profile',
+      quote: {
+        en: "Versatile professional with a diverse skill set, combining technical expertise with strong problem-solving and communication abilities.",
+        da: "Alsidig professionel med et bredt kompetencesæt, der kombinerer teknisk ekspertise med stærke problemløsnings- og kommunikationsevner."
+      },
+      info: {
+        en:
+          "Professional with a comprehensive background spanning IT support, software development, and diverse project work. " +
+          "I bring technical depth combined with a service-minded approach to solving challenges. " +
+          "Experienced in both technical implementation and user-focused problem solving, I excel at bridging the gap between complex technical concepts " +
+          "and practical business needs. My background enables me to work effectively across different roles and industries.",
+        da:
+          "Professionel med en omfattende baggrund inden for IT support, softwareudvikling og varieret projektarbejde. " +
+          "Jeg bringer teknisk dybde kombineret med en serviceminded tilgang til problemløsning. " +
+          "Erfaring med både teknisk implementering og brugerfokuseret problemløsning gør mig i stand til at bygge bro mellem komplekse tekniske koncepter " +
+          "og praktiske forretningsbehov. Min baggrund gør mig i stand til at arbejde effektivt på tværs af forskellige roller og brancher."
+      },
+      skillInfo: {
+        en:
+          "My professional toolkit includes both technical development skills (frontend, backend, databases) and support expertise (troubleshooting, user support, systems administration). " +
+          "I combine these with strong soft skills: clear communication, structured problem-solving, and the ability to adapt to different environments. " +
+          "Whether building solutions, supporting users, or coordinating across teams, I bring the same commitment to quality and continuous improvement.",
+        da:
+          "Mit professionelle værktøj omfatter både tekniske udviklingsfærdigheder (frontend, backend, databaser) og support-ekspertise (fejlfinding, bruger-support, systemadministration). " +
+          "Jeg kombinerer disse med stærke personlige kompetencer: klar kommunikation, struktureret problemløsning og evnen til at tilpasse mig forskellige miljøer. " +
+          "Uanset om jeg bygger løsninger, supporter brugere eller koordinerer på tværs af teams, bringer jeg samme dedikation til kvalitet og kontinuerlig forbedring."
+      }
+    };
   }
 
   return null;
@@ -81,6 +111,11 @@ export const getExperienceEmphasis = (role) => {
     return {
       highlightKeywords: ['support', 'resolved', 'troubleshot', 'maintained', 'user support', 'systems', 'documented', 'trained'],
       descriptionFocus: 'support'
+    };
+  } else if (role === 'general') {
+    return {
+      highlightKeywords: ['developed', 'supported', 'managed', 'implemented', 'solved', 'coordinated', 'optimized', 'improved'],
+      descriptionFocus: 'balanced'
     };
   }
 

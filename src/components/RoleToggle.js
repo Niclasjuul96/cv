@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import './RoleToggle.scss';
 
 export const RoleToggle = () => {
-  const { role, switchRole, isDeveloper, isITSupport } = useRole();
+  const { role, switchRole, isDeveloper, isITSupport, isGeneral } = useRole();
 
   return (
     <div className="role-toggle">
@@ -26,6 +26,14 @@ export const RoleToggle = () => {
           aria-pressed={isITSupport}
         >
           🛠️ IT Support
+        </button>
+        <button
+          type="button"
+          className={`role-btn ${isGeneral ? 'active' : ''}`}
+          onClick={() => switchRole(ROLES.GENERAL)}
+          aria-pressed={isGeneral}
+        >
+          👤 General Profile
         </button>
       </div>
     </div>
